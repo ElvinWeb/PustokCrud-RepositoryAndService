@@ -1,0 +1,51 @@
+﻿@model Slide;
+<style>
+    .form-container {
+        max-width: 700px;
+        padding: 50px;
+        margin-bottom: 50px;
+        border-left: 7px solid #435d7d !important;
+        border-radius: 3px;
+    }
+
+    .btn-info, .btn-primary {
+        width: 150px;
+    }
+</style>
+<div class="container shadow form-container">
+    <div>
+        <h1 class="title mb-3">Update a Slide</h1>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="" class="form-label">Title</label>
+            <input asp-for="Title" type="text" class="form-control">
+            <span asp-validation-for="Title" style="color:red"></span>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Description</label>
+            <input asp-for="Description" type="text" class="form-control">
+            <span asp-validation-for="Description" style="color:red"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Redirect-Url</label>
+            <input asp-for="RedirectUrl" type="text" class="form-control">
+            <span asp-validation-for="RedirectUrl" style="color:red"></span>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Btn-content</label>
+            <input asp-for="BtnText" type="text" class="form-control">
+            <span asp-validation-for="BtnText" style="color:red"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Image</label>
+            <input asp-for="Image" type="file" class="form-control">
+            <span asp-validation-for="Image" style="color:red"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary ">Update</button>
+        <a class="btn btn-info" asp-action="Index" asp-controller="Slider">Back To Home</a>
+    </form>
+</div>

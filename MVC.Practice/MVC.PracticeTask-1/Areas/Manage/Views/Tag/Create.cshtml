@@ -1,0 +1,29 @@
+﻿@model Tag;
+<style>
+    .form-container {
+        max-width: 550px;
+        margin-top: 150px;
+        padding: 50px;
+        border-left: 7px solid #435d7d !important;
+        border-radius: 3px;
+    }
+
+    .btn-info, .btn-primary {
+        width: 150px;
+    }
+</style>
+<div class="container shadow form-container">
+    <div>
+        <h1 class="title mb-3">Create a Tag</h1>
+    </div>
+    <form method="post">
+        <div class="mb-3">
+            <label for="" asp-for="Name" class="form-label">Tag</label>
+            <input asp-for="Name" type="text" class="form-control form-input" placeholder="please enter the Tag">
+            <span asp-validation-for="Name" style="color:red"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a class="btn btn-info" asp-action="Index" asp-controller="Tag">Back To Home</a>
+    </form>
+</div>

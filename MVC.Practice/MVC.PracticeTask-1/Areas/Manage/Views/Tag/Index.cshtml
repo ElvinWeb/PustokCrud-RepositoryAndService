@@ -1,0 +1,70 @@
+﻿@model List<Tag>;
+@{
+    int counter = 0;
+}
+@section cssFiles{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+}
+
+<style>
+    .table-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 40px;
+        background-color: #435d7d !important;
+    }
+
+        .table-title .title {
+            font-weight: 700;
+        }
+
+        .table-title span {
+            font-weight: 300;
+        }
+
+    .create-btn {
+        width: 110px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="table-title text-white">
+        <h1 class="title">Tags <span>Table</span></h1>
+        <a class="btn btn-success create-btn" asp-action="Create" asp-controller="Tag">Create</a>
+    </div>
+
+    <table class="table table-hover table-striped shadow">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tag in Model)
+            {
+                counter++;
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@tag.Name</td>
+                    <td>
+                        <a class="btn btn-warning" asp-action="Update" asp-controller="Tag" asp-route-id="@tag.Id">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <a class="btn btn-danger delete-btn" asp-action="Delete" asp-controller="Tag" asp-route-id="@tag.Id">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+
+@section jsFiles{
+    <script src="~/assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.min.js"></script>
+}
