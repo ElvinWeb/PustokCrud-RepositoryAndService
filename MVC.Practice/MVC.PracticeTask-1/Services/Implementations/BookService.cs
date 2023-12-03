@@ -165,16 +165,12 @@ namespace MVC.PracticeTask_1.Services.Implementations
             {
                 foreach (var item in wantedBook.BookImages)
                 {
-                    if (item.isPoster == true && item.isPoster == false && item.isPoster == null)
+                    string fullPath = Path.Combine(_env.WebRootPath, "uploads/books", item.ImgUrl);
+
+                    if (File.Exists(fullPath))
                     {
-                        string fullPath = Path.Combine(_env.WebRootPath, "uploads/books", item.ImgUrl);
-
-                        if (File.Exists(fullPath))
-                        {
-                            File.Delete(fullPath);
-                        }
+                        File.Delete(fullPath);
                     }
-
                 }
             }
 
@@ -216,7 +212,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
             List<BookTag> BookTags = await _bookRepository.GetAllBookTagAsync();
             List<BookImage> BookImages = await _bookRepository.GetAllBookImagesAsync();
 
-         
+
             Book existBook = await _bookRepository.GetBookByIdAsync(book.Id);
 
             if (existBook == null) throw new InvalidNullReferance();
@@ -359,6 +355,9 @@ namespace MVC.PracticeTask_1.Services.Implementations
             existBook.SalePrice = book.SalePrice;
             existBook.CostPrice = book.CostPrice;
             existBook.IsAvailable = book.IsAvailable;
+            existBook.isBestseller = book.isBestseller;
+            existBook.isNew = book.isNew;
+            existBook.isFeatured = book.isFeatured;
             existBook.DiscountPercent = book.DiscountPercent;
             existBook.AuthorId = book.AuthorId;
             existBook.GenreId = book.GenreId;

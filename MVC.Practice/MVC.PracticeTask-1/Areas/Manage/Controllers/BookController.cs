@@ -16,14 +16,10 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
     [Area("Manage")]
     public class BookController : Controller
     {
-        private readonly AppDbContext _DbContext;
-
-        private readonly IWebHostEnvironment _env;
+       
         private readonly IBookService _bookService;
-        public BookController(AppDbContext _context, IWebHostEnvironment env, IBookService bookService)
+        public BookController(IBookService bookService)
         {
-            _DbContext = _context;
-            _env = env;
             _bookService = bookService;
         }
         public async Task<IActionResult> Index()

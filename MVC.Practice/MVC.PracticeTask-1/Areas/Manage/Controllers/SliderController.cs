@@ -11,13 +11,10 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
     public class SliderController : Controller
     {
 
-        private readonly AppDbContext _DbContext;
-        private readonly IWebHostEnvironment _env;
         private readonly ISliderService _sliderService;
-        public SliderController(AppDbContext _context, IWebHostEnvironment env, ISliderService sliderService)
+        public SliderController(ISliderService sliderService)
         {
-            _DbContext = _context;
-            _env = env;
+
             _sliderService = sliderService;
         }
         public async Task<IActionResult> Index()
@@ -28,7 +25,7 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
