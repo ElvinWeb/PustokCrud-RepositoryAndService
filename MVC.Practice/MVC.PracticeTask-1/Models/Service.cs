@@ -2,9 +2,9 @@
 
 namespace MVC.PracticeTask_1.Models
 {
-    public class Service
+    public class Service  : BaseEntity
     {
-        public int Id { get; set; }
+       
         [Required]
         [StringLength(maximumLength: 30)]
         public string Title { get; set; }

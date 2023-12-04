@@ -1,23 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVC.PracticeTask_1.DataAccessLayer;
+using MVC.PracticeTask_1.Exceptions.CommonModelsExceptions;
 using MVC.PracticeTask_1.Models;
+using MVC.PracticeTask_1.Services;
+using MVC.PracticeTask_1.Services.Implementations;
 
 namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 {
     [Area("Manage")]
     public class TagController : Controller
     {
-        private readonly AppDbContext _DbContext;
-        public TagController(AppDbContext _context)
+        private readonly ITagService _tagService;
+        public TagController(ITagService tagService)
         {
-            _DbContext = _context;
+            _tagService = tagService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Tag> tags = _DbContext.Tags.ToList();
+            List<Tag> Tags = await _tagService.GetAllAsync();
 
-            return View(tags);
+            return View(Tags);
         }
         [HttpGet]
         public IActionResult Create()
@@ -25,29 +28,30 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Tag tag)
+        public async Task<IActionResult> Create(Tag tag)
         {
             if (!ModelState.IsValid) return View();
 
-            if (_DbContext.Tags.Any(t => t.Name.ToLower() == tag.Name.ToLower()))
+            try
             {
-                ModelState.AddModelError("Name", "tag has already created!");
+                await _tagService.CreateAsync(tag);
+            }
+            catch (InvalidAlreadyCreated ex)
+            {
+                ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();
             }
-
-            _DbContext.Tags.Add(tag);
-            _DbContext.SaveChanges();
 
             return RedirectToAction("Index");
 
         }
 
         [HttpGet]
-        public IActionResult Update(int id)
+        public async Task<IActionResult> Update(int id)
         {
             if (id == null) return NotFound();
 
-            Tag tag = _DbContext.Tags.FirstOrDefault(t => t.Id == id);
+            Tag tag = await _tagService.GetByIdAsync(id);
 
             if (tag == null) return NotFound();
 
@@ -55,35 +59,28 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(Tag tag)
+        public async Task<IActionResult> Update(Tag tag)
         {
             if (!ModelState.IsValid) return View();
 
-            Tag existTag = _DbContext.Tags.FirstOrDefault(t => t.Id == tag.Id);
-            if (existTag == null) return NotFound();
-
-            if (_DbContext.Tags.Any(t => t.Id != tag.Id && t.Name.ToLower() == tag.Name.ToLower()))
+            try
             {
-                ModelState.AddModelError("Name", "tag has already created!");
+                await _tagService.CreateAsync(tag);
+            }
+            catch (InvalidAlreadyCreated ex)
+            {
+                ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();
             }
-
-            existTag.Name = tag.Name;
-
-            _DbContext.SaveChanges();
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (id == null) return NotFound();
 
-            Tag tag = _DbContext.Tags.FirstOrDefault(t => t.Id == id);
-            if (tag == null) return NotFound();
-
-            _DbContext.Tags.Remove(tag);
-            _DbContext.SaveChanges();
+            await _tagService.Delete(id);
 
             return Ok();
         }

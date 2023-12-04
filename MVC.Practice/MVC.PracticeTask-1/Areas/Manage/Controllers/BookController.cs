@@ -1,26 +1,35 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MVC.PracticeTask_1.DataAccessLayer;
 using MVC.PracticeTask_1.Exceptions.BookExceptions;
+using MVC.PracticeTask_1.Exceptions.CommonModelsExceptions;
 using MVC.PracticeTask_1.Helpers;
 using MVC.PracticeTask_1.Models;
 using MVC.PracticeTask_1.Services;
 using MVC.PracticeTask_1.Services.Implementations;
 using MVC.PracticeTask_1.ViewModel;
-using System.Drawing;
-using System.Security.Policy;
 
 namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 {
     [Area("Manage")]
     public class BookController : Controller
     {
-       
+
         private readonly IBookService _bookService;
-        public BookController(IBookService bookService)
+        private readonly IAuthorService _authorService;
+        private readonly IGenreService _genreService;
+        private readonly ITagService _tagService;
+        public BookController(IBookService bookService,
+                              IAuthorService authorService,
+                              IGenreService genreService,
+                              ITagService tagService
+            )
         {
             _bookService = bookService;
+            _authorService = authorService;
+            _genreService = genreService;
+            _tagService = tagService;
+
         }
         public async Task<IActionResult> Index()
         {
@@ -36,9 +45,9 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            ViewBag.Authors = await _bookService.GetAllAuthorAsync();
-            ViewBag.Genres = await _bookService.GetAllGenreAsync();
-            ViewBag.Tags = await _bookService.GetAllTagAsync();
+            ViewBag.Authors = await _authorService.GetAllAsync();
+            ViewBag.Genres = await _genreService.GetAllAsync();
+            ViewBag.Tags = await _tagService.GetAllAsync();
 
             return View();
         }
@@ -46,9 +55,9 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Book book)
         {
-            ViewBag.Authors = await _bookService.GetAllAuthorAsync();
-            ViewBag.Genres = await _bookService.GetAllGenreAsync();
-            ViewBag.Tags = await _bookService.GetAllTagAsync();
+            ViewBag.Authors = await _authorService.GetAllAsync();
+            ViewBag.Genres = await _genreService.GetAllAsync();
+            ViewBag.Tags = await _tagService.GetAllAsync();
 
             if (!ModelState.IsValid) return View();
 
@@ -195,36 +204,17 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
             {
                 await _bookService.CreateAsync(book);
             }
-            catch (InvalidContentType ex)
+            catch (InvalidContentTypeOrImageSize ex)
             {
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();
             }
-            catch (InvalidImageSize ex)
+            catch (NotFound ex)
             {
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();
             }
-            catch (InvalidImage ex)
-            {
-                ModelState.AddModelError(ex.PropertyName, ex.Message);
-                return View();
-            }
-            catch (InvalidGenreId ex)
-            {
-                ModelState.AddModelError(ex.PropertyName, ex.Message);
-                return View();
-            }
-            catch (InvalidTagId ex)
-            {
-                ModelState.AddModelError(ex.PropertyName, ex.Message);
-                return View();
-            }
-            catch (InvalidAuthorId ex)
-            {
-                ModelState.AddModelError(ex.PropertyName, ex.Message);
-                return View();
-            }
+
 
             return RedirectToAction("Index");
         }
@@ -232,15 +222,15 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            ViewBag.Authors = await _bookService.GetAllAuthorAsync();
-            ViewBag.Genres = await _bookService.GetAllGenreAsync();
-            ViewBag.Tags = await _bookService.GetAllTagAsync();
+            ViewBag.Authors = await _authorService.GetAllAsync();
+            ViewBag.Genres = await _genreService.GetAllAsync();
+            ViewBag.Tags = await _tagService.GetAllAsync();
 
             if (id == null) return NotFound();
 
             try
             {
-                await _bookService.DeleteAsync(id);
+                await _bookService.SoftDelete(id);
             }
             catch (InvalidNullReferance)
             {
@@ -254,13 +244,13 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            ViewBag.Authors = await _bookService.GetAllAuthorAsync();
-            ViewBag.Genres = await _bookService.GetAllGenreAsync();
-            ViewBag.Tags = await _bookService.GetAllTagAsync();
+            ViewBag.Authors = await _authorService.GetAllAsync();
+            ViewBag.Genres = await _genreService.GetAllAsync();
+            ViewBag.Tags = await _tagService.GetAllAsync();
 
             if (id == null) return NotFound();
 
-            Book book = await _bookService.GetAsync(id);
+            Book book = await _bookService.GetByIdAsync(id);
 
             if (book == null) return NotFound();
 
@@ -274,9 +264,9 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         public async Task<IActionResult> Update(Book book)
         {
 
-            ViewBag.Authors = await _bookService.GetAllAuthorAsync();
-            ViewBag.Genres = await _bookService.GetAllGenreAsync();
-            ViewBag.Tags = await _bookService.GetAllTagAsync();
+            ViewBag.Authors = await _authorService.GetAllAsync();
+            ViewBag.Genres = await _genreService.GetAllAsync();
+            ViewBag.Tags = await _tagService.GetAllAsync();
 
 
             #region oldcodes
@@ -438,24 +428,19 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
             {
                 await _bookService.UpdateAsync(book);
             }
-            catch (InvalidContentType ex)
+            catch (InvalidContentTypeOrImageSize ex)
             {
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();
             }
-            catch (InvalidImageSize ex)
+            catch (NotFound ex)
             {
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();
             }
-            catch (InvalidImage ex)
+            catch (NullReferenceException ex)
             {
-                ModelState.AddModelError(ex.PropertyName, ex.Message);
-                return View();
-            }
-            catch (InvalidNullReferance)
-            {
-
+               
             }
 
             return RedirectToAction("Index");

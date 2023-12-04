@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVC.PracticeTask_1.Models
 {
-    public class Slide
+    public class Slide : BaseEntity
     {
-        public int Id { get; set; }
+       
         [Required]
         [StringLength(maximumLength: 50)]
         public string Title { get; set; }

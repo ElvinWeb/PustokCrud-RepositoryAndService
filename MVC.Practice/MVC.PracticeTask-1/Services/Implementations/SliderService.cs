@@ -3,6 +3,7 @@ using MVC.PracticeTask_1.Exceptions.SliderExceptions;
 using MVC.PracticeTask_1.Helpers;
 using MVC.PracticeTask_1.Models;
 using MVC.PracticeTask_1.Repositories;
+using MVC.PracticeTask_1.Repositories.Implementations;
 
 namespace MVC.PracticeTask_1.Services.Implementations
 {
@@ -42,7 +43,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
             slide.ImgUrl = newFileName;
 
             await _sliderRepository.CreateAsync(slide);
-            await _sliderRepository.SaveAsync();
+            await _sliderRepository.CommitAsync();
 
         }
 
@@ -50,7 +51,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
         {
             if (id == null) throw new InvalidNullReferance();
 
-            Slide wantedSlide = await _sliderRepository.GetSlideByIdAsync(id);
+            Slide wantedSlide = await _sliderRepository.GetByIdAsync(x => x.Id == id && x.IsDeleted == false);
 
             if (wantedSlide == null) throw new InvalidNullReferance();
 
@@ -62,7 +63,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
             }
 
             _sliderRepository.Delete(wantedSlide);
-            await _sliderRepository.SaveAsync();
+            await _sliderRepository.CommitAsync();
         }
 
         public async Task<List<Slide>> GetAllAsync()
@@ -70,13 +71,17 @@ namespace MVC.PracticeTask_1.Services.Implementations
             return await _sliderRepository.GetAllAsync();
         }
 
-        public async Task<Slide> GetAsync(int id)
+        public async Task<Slide> GetByIdAsync(int id)
         {
-            return await _sliderRepository.GetSlideByIdAsync(id);
+            Slide entity = await _sliderRepository.GetByIdAsync(x => x.Id == id && x.IsDeleted == false);
+
+            if (entity is null) throw new NullReferenceException();
+
+            return entity;
         }
         public async Task UpdateAsync(Slide slide)
         {
-            Slide wantedSlide = await _sliderRepository.GetSlideByIdAsync(slide.Id);
+            Slide wantedSlide = await _sliderRepository.GetByIdAsync(x => x.Id == slide.Id && x.IsDeleted == false);
 
             if (wantedSlide == null) throw new InvalidNullReferance();
 
@@ -113,7 +118,11 @@ namespace MVC.PracticeTask_1.Services.Implementations
             wantedSlide.RedirectUrl = slide.RedirectUrl;
 
 
-            await _sliderRepository.SaveAsync();
+            await _sliderRepository.CommitAsync();
+        }
+        public Task Delete(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

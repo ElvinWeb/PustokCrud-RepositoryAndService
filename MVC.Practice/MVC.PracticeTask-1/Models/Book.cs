@@ -2,9 +2,9 @@
 
 namespace MVC.PracticeTask_1.Models
 {
-    public class Book
+    public class Book : BaseEntity
     {
-        public int Id { get; set; }
+
         public string Name { get; set; }
         public string Desc { get; set; }
         public double Tax { get; set; }

@@ -1,8 +1,7 @@
 ﻿namespace MVC.PracticeTask_1.Models
 {
-    public class Genre
+    public class Genre : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public List<Book>? Books { get; set; }
     }

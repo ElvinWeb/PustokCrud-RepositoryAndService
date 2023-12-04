@@ -63,7 +63,7 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         {
             if (id == null) return View();
 
-            Slide slide = await _sliderService.GetAsync(id);
+            Slide slide = await _sliderService.GetByIdAsync(id);
 
             if (slide == null) return NotFound();
 
@@ -108,7 +108,7 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 
             try
             {
-                await _sliderService.DeleteAsync(id);
+                await _sliderService.Delete(id);
             }
             catch (InvalidNullReferance)
             {

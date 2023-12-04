@@ -34,6 +34,9 @@ namespace MVC.PracticeTask_1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
@@ -68,6 +71,9 @@ namespace MVC.PracticeTask_1.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -113,6 +119,9 @@ namespace MVC.PracticeTask_1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<bool?>("isPoster")
                         .HasColumnType("bit");
 
@@ -134,6 +143,9 @@ namespace MVC.PracticeTask_1.Migrations
                     b.Property<int>("BookId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<int>("TagId")
                         .HasColumnType("int");
 
@@ -153,6 +165,9 @@ namespace MVC.PracticeTask_1.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -179,6 +194,9 @@ namespace MVC.PracticeTask_1.Migrations
                     b.Property<string>("Icon")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -212,6 +230,9 @@ namespace MVC.PracticeTask_1.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("RedirectUrl")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -234,6 +255,9 @@ namespace MVC.PracticeTask_1.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
