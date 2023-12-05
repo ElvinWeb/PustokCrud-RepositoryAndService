@@ -45,7 +45,6 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
             return RedirectToAction("Index");
 
         }
-
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {

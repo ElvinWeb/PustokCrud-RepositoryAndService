@@ -32,7 +32,7 @@ namespace MVC.PracticeTask_1.Repositories.Implementations
             Table.Remove(entity);
         }
 
-        public async Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>>? expression = null, params string[]? includes) //{"Authors","BookImages", "BookTags.Tag"}
+        public async Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>>? expression = null, params string[]? includes) 
         {
             var query = GetQuery(includes);
 
@@ -53,6 +53,7 @@ namespace MVC.PracticeTask_1.Repositories.Implementations
         private IQueryable<TEntity> GetQuery(string[] includes)
         {
             var query = Table.AsQueryable();
+
             if (includes is not null)
             {
                 foreach (var item in includes)

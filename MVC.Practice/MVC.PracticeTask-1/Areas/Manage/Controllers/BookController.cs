@@ -240,7 +240,6 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
             return Ok();
         }
 
-
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
