@@ -15,7 +15,7 @@ namespace MVC.PracticeTask_1.Repositories.Implementations
             _DbContext = context;
         }
 
-        public DbSet<TEntity> Table => _DbContext.Set<TEntity>(); 
+        public DbSet<TEntity> Table => _DbContext.Set<TEntity>();
 
         public async Task<int> CommitAsync()
         {

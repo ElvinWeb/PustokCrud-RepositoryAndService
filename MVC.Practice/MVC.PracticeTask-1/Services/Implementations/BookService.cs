@@ -163,7 +163,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
 
         public async Task<List<Book>> GetAllAsync()
         {
-            return await _bookRepository.GetAllAsync(x => x.IsDeleted == false, "BookImages", "Author");
+            return await _bookRepository.GetAllAsync(x => x.IsDeleted == false, "BookImages", "Author", "Genre");
         }
 
         public async Task<Book> GetByIdAsync(int id)
