@@ -6,6 +6,7 @@ namespace MVC.PracticeTask_1.Services
     {
         Task CreateAsync(Genre entity);
         Task Delete(int id);
+   
         Task<Genre> GetByIdAsync(int id);
         Task<List<Genre>> GetAllAsync();
         Task UpdateAsync(Genre entity);

@@ -1,5 +1,18 @@
 ﻿@model Book;
-<div class="container shadow " style="max-width:800px;padding:50px;margin-bottom:50px;">
+<style>
+    .form-container {
+        max-width: 800px;
+        margin-bottom: 70px;
+        padding: 50px;
+        border-left: 7px solid #435d7d !important;
+        border-radius: 3px;
+    }
+
+    .btn-info, .btn-primary {
+        width: 150px;
+    }
+</style>
+<div class="container shadow form-container">
     <div class="mb-3">
         <h1>Update a Book</h1>
     </div>
@@ -85,7 +98,7 @@
                 <input class="form-control  mx-3" asp-for="BookMainImage" />
                 <div class="d-flex align-items-center flex-column">
                     <img style="width:100px" src="~/uploads/books/@Model.BookImages?.Where(x => x.isPoster == true).FirstOrDefault()?.ImgUrl" class="shadow" />
-                    <input type="hidden"  asp-for="BookImageIds" style="width:50px;" />
+                    <input type="hidden" asp-for="BookImageIds" style="width:50px;" />
                 </div>
                 <span asp-validation-for="BookMainImage" style="color:red"></span>
             </div>
@@ -115,7 +128,6 @@
             </div>
         </div>
 
-
         <div class="row col-12 my-4 align-items-center flex-row">
             <div class="form-check form-switch mt-5 mb-3 col-md-3" style="padding-left:40px;">
                 <input class="form-check-input" type="checkbox" id="" asp-for="IsAvailable">
@@ -139,7 +151,8 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary w-25">Update</button>
-        <a class="btn btn-success w-25" asp-action="Index" asp-controller="Book">Back To Home</a>
+
+        <a class="btn btn-info" asp-action="Index" asp-controller="Book">Back To Home</a>
     </form>
 </div>
 

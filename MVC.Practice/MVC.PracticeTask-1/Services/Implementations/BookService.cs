@@ -161,8 +161,6 @@ namespace MVC.PracticeTask_1.Services.Implementations
             throw new NotImplementedException();
         }
 
-
-
         public async Task<List<Book>> GetAllAsync()
         {
             return await _bookRepository.GetAllAsync(x => x.IsDeleted == false, "BookImages", "Author");
@@ -207,6 +205,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
 
 
             existBook.BookTags.RemoveAll(bt => !entity.TagIds.Contains(bt.TagId));
+
             foreach (var tagId in entity.TagIds.Where(x => !existBook.BookTags.Any(bt => bt.TagId == x)))
             {
                 BookTag bookTag = new BookTag

@@ -1,5 +1,18 @@
 ﻿@model Book;
-<div class="container shadow " style="max-width:800px;padding:50px;margin-bottom:50px;">
+<style>
+    .form-container {
+        max-width: 800px;
+        margin-bottom: 70px;
+        padding: 50px;
+        border-left: 7px solid #435d7d !important;
+        border-radius: 3px;
+    }
+
+    .btn-info, .btn-primary {
+        width: 150px;
+    }
+</style>
+<div class="container shadow form-container">
     <div class="mb-3">
         <h1>Create a Book</h1>
     </div>
@@ -120,6 +133,6 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary w-25">Submit</button>
-        <a class="btn btn-success w-25" asp-action="Index" asp-controller="Book">Back To Home</a>
+        <a class="btn btn-info" asp-action="Index" asp-controller="Book">Back To Home</a>
     </form>
 </div>
