@@ -22,4 +22,8 @@
     <Folder Include="wwwroot\uploads\books\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PustokMVC.Business\PustokMVC.Business.csproj" />
+  </ItemGroup>
+
 </Project>

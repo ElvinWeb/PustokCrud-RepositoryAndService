@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MVC.PracticeTask_1.DataAccessLayer;
-using MVC.PracticeTask_1.Exceptions.CommonModelsExceptions;
-using MVC.PracticeTask_1.Models;
-using MVC.PracticeTask_1.Services;
-using MVC.PracticeTask_1.Services.Implementations;
+using MVC.Practice.PustokMVC.Business.Services;
+using MVC.Practice.PustokMVC.Core.Models;
+using MVC.Practice.PustokMVC.Business.Exceptions.CommonModelsExceptions;
+
 
 namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 {

@@ -443,3 +443,9 @@ C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MV
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\MVC.PracticeTask-1\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\MVC.PracticeTask-1\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\MVC.PracticeTask-1\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\MVC.PracticeTask-1\bin\Debug\net6.0\PustokMVC.Business.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\MVC.PracticeTask-1\bin\Debug\net6.0\PustokMVC.Core.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\MVC.PracticeTask-1\bin\Debug\net6.0\PustokMVC.Data.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\MVC.PracticeTask-1\bin\Debug\net6.0\PustokMVC.Business.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\MVC.PracticeTask-1\bin\Debug\net6.0\PustokMVC.Core.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\MVC.PracticeTask-1\bin\Debug\net6.0\PustokMVC.Data.pdb

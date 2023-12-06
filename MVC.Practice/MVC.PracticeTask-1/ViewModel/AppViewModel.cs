@@ -1,4 +1,4 @@
-﻿using MVC.PracticeTask_1.Models;
+﻿using MVC.Practice.PustokMVC.Core.Models;
 
 namespace MVC.PracticeTask_1.ViewModel
 {

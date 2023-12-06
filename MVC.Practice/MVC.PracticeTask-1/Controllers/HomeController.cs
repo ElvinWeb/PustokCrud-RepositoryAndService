@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MVC.PracticeTask_1.DataAccessLayer;
-using MVC.PracticeTask_1.Models;
+using MVC.Practice.PustokMVC.Data.DataAccessLayer;
 using MVC.PracticeTask_1.ViewModel;
 
 namespace MVC.PracticeTask_1.Controllers

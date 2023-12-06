@@ -1,0 +1,14 @@
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\obj\Debug\net6.0\PustokMVC.Core.csproj.AssemblyReference.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\obj\Debug\net6.0\PustokMVC.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\obj\Debug\net6.0\PustokMVC.Core.AssemblyInfoInputs.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\obj\Debug\net6.0\PustokMVC.Core.AssemblyInfo.cs
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\obj\Debug\net6.0\PustokMVC.Core.csproj.CoreCompileInputs.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\bin\Debug\net6.0\PustokMVC.Core.deps.json
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\bin\Debug\net6.0\PustokMVC.Core.runtimeconfig.json
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\bin\Debug\net6.0\PustokMVC.Core.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\bin\Debug\net6.0\PustokMVC.Core.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\obj\Debug\net6.0\PustokMVC.Core.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\obj\Debug\net6.0\refint\PustokMVC.Core.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\obj\Debug\net6.0\PustokMVC.Core.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\obj\Debug\net6.0\PustokMVC.Core.genruntimeconfig.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Core\obj\Debug\net6.0\ref\PustokMVC.Core.dll

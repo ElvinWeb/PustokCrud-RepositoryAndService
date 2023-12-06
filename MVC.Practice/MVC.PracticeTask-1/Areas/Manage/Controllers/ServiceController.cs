@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MVC.PracticeTask_1.DataAccessLayer;
-using MVC.PracticeTask_1.Models;
+using MVC.Practice.PustokMVC.Core.Models;
+using MVC.Practice.PustokMVC.Data.DataAccessLayer;
 
 namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 {

@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using MVC.PracticeTask_1.DataAccessLayer;
-using MVC.PracticeTask_1.Repositories;
-using MVC.PracticeTask_1.Repositories.Implementations;
-using MVC.PracticeTask_1.Services;
+using MVC.Practice.PustokMVC.Business.Services;
+using MVC.Practice.PustokMVC.Core.Repositories;
+using MVC.Practice.PustokMVC.Data.DataAccessLayer;
+using MVC.Practice.PustokMVC.Data.Repositories.Implementations;
 using MVC.PracticeTask_1.Services.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
