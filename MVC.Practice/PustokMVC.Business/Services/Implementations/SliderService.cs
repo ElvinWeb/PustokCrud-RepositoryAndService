@@ -69,7 +69,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
 
         public async Task<List<Slide>> GetAllAsync()
         {
-            return await _sliderRepository.GetAllAsync();
+            return await _sliderRepository.GetAllAsync(x => x.IsDeleted == false);
         }
 
         public async Task<Slide> GetByIdAsync(int id)

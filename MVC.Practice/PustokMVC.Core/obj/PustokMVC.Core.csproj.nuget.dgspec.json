@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj": {}
+    "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj": {
+    "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj",
+        "projectUniqueName": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj",
         "projectName": "PustokMVC.Core",
-        "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj",
-        "packagesPath": "C:\\Users\\elvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\obj\\",
+        "projectPath": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj",
+        "packagesPath": "C:\\Users\\II novbe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\elvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\II novbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -15,3 +15,20 @@ C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MV
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.pdb
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.genruntimeconfig.cache
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MVC-PustokAdmin\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\ref\PustokMVC.Data.dll
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\bin\Debug\net6.0\PustokMVC.Data.deps.json
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\bin\Debug\net6.0\PustokMVC.Data.runtimeconfig.json
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\bin\Debug\net6.0\PustokMVC.Data.dll
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\bin\Debug\net6.0\PustokMVC.Data.pdb
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\bin\Debug\net6.0\PustokMVC.Core.dll
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\bin\Debug\net6.0\PustokMVC.Core.pdb
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.csproj.AssemblyReference.cache
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.AssemblyInfoInputs.cache
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.AssemblyInfo.cs
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.csproj.CoreCompileInputs.cache
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.csproj.CopyComplete
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.dll
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\refint\PustokMVC.Data.dll
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.pdb
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\PustokMVC.Data.genruntimeconfig.cache
+C:\Users\II novbe\Desktop\FromGitProject\PustokCrud-RepositoryAndService\MVC.Practice\PustokMVC.Data\obj\Debug\net6.0\ref\PustokMVC.Data.dll

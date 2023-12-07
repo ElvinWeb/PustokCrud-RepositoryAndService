@@ -167,6 +167,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
             return await _bookRepository.GetAllAsync(x => x.IsDeleted == false, "BookImages", "Author", "Genre");
         }
 
+<<<<<<< HEAD
         public async Task<List<Book>> GetBestsellerBooksAsync()
         {
             return await _bookRepository.GetAllAsync(x => x.isBestseller == true, "BookImages", "Author");
@@ -180,6 +181,19 @@ namespace MVC.PracticeTask_1.Services.Implementations
         public async Task<List<Book>> GetNewBooksAsync()
         {
             return await _bookRepository.GetAllAsync(x => x.isNew == true, "BookImages", "Author");
+=======
+        public async Task<List<Book>> GetAllNewBooksAsync()
+        {
+            return await _bookRepository.GetAllAsync(x => x.IsDeleted == false && x.isNew == true, "BookImages", "Author");
+        }
+        public async Task<List<Book>> GetAllBestsellerAsync()
+        {
+            return await _bookRepository.GetAllAsync(x => x.IsDeleted == false && x.isBestseller == true, "BookImages", "Author");
+        }
+        public async Task<List<Book>> GetAllFeaturedAsync()
+        {
+            return await _bookRepository.GetAllAsync(x => x.IsDeleted == false && x.isFeatured == true, "BookImages", "Author");
+>>>>>>> 070b16653b75c086ecfc1746423ec366c1523347
         }
         public async Task<Book> GetByIdAsync(int id)
         {
