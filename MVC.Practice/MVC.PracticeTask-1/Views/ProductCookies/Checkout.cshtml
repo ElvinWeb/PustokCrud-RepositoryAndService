@@ -1,9 +1,12 @@
 ﻿@model List<CheckoutViewModel>;
 @{
     double TotalSum = 0;
-    @foreach (var item in Model)
+    double PriceWithPercentage = 0;
+
+    foreach (var item in Model)
     {
-        TotalSum += (item.Book.SalePrice - (item.Book.SalePrice * item.Book.DiscountPercent) / 100) * item.Count;
+        PriceWithPercentage = (item.Book.SalePrice - item.Book.Tax - (item.Book.SalePrice * item.Book.DiscountPercent) / 100) * item.Count;
+        TotalSum += (item.Book.SalePrice - item.Book.Tax - (item.Book.SalePrice * item.Book.DiscountPercent) / 100) * item.Count;
     }
 }
 
@@ -234,7 +237,7 @@
                                             @foreach (var item in Model)
                                             {
                                                 <li>
-                                                    <span class="left">@item.Book.Name X @item.Count eded</span> <span class="right">$@((item.Book.SalePrice - (item.Book.SalePrice * item.Book.DiscountPercent) / 100) * @item.Count)</span>
+                                                    <span class="left">@item.Book.Name  X  @item.Count</span> <span class="right">$@PriceWithPercentage</span>
                                                 </li>
                                             }
                                         </ul>

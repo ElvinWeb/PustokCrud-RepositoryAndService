@@ -7841,15 +7841,11 @@
       "PackagePath": "staticwebassets\\assets\\js\\plugins.js"
     },
     {
-<<<<<<< HEAD
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\assets\\js\\script.js",
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\assets\\js\\script.js",
       "PackagePath": "staticwebassets\\assets\\js\\script.js"
     },
     {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\bg-slide\\2b7deb28-406d-4590-ac57-e09872de68fehome-slider-2-ai.png",
-=======
       "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\bg-slide\\2b7deb28-406d-4590-ac57-e09872de68fehome-slider-2-ai.png",
->>>>>>> 070b16653b75c086ecfc1746423ec366c1523347
       "PackagePath": "staticwebassets\\uploads\\bg-slide\\2b7deb28-406d-4590-ac57-e09872de68fehome-slider-2-ai.png"
     },
     {
@@ -7857,15 +7853,11 @@
       "PackagePath": "staticwebassets\\uploads\\bg-slide\\8ce0f65a-97f8-456a-ac24-992c0a1262bbhome-slider-1-ai.png"
     },
     {
-<<<<<<< HEAD
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\07d934c5-a1f7-4398-acdb-1dde7f2589b9product-8.jpg",
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\07d934c5-a1f7-4398-acdb-1dde7f2589b9product-8.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\07d934c5-a1f7-4398-acdb-1dde7f2589b9product-8.jpg"
     },
     {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\0ce1daa1-927a-468a-a153-86c54ed93ea1product-12.jpg",
-=======
       "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\0ce1daa1-927a-468a-a153-86c54ed93ea1product-12.jpg",
->>>>>>> 070b16653b75c086ecfc1746423ec366c1523347
       "PackagePath": "staticwebassets\\uploads\\books\\0ce1daa1-927a-468a-a153-86c54ed93ea1product-12.jpg"
     },
     {
@@ -7889,39 +7881,35 @@
       "PackagePath": "staticwebassets\\uploads\\books\\2e7002e1-786d-4a0f-ae79-8bc30b3ea2bcproduct-12.jpg"
     },
     {
-<<<<<<< HEAD
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\301ca1c0-e780-471a-a6de-5e9b69b1b2adproduct-3.jpg",
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\301ca1c0-e780-471a-a6de-5e9b69b1b2adproduct-3.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\301ca1c0-e780-471a-a6de-5e9b69b1b2adproduct-3.jpg"
     },
     {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\41408d54-a024-4987-90b4-ae84b6c2a1b8product-7.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\41408d54-a024-4987-90b4-ae84b6c2a1b8product-7.jpg"
-    },
-    {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\516e2db4-7edf-4a38-898b-3efc225d3a61product-11.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\516e2db4-7edf-4a38-898b-3efc225d3a61product-11.jpg"
-    },
-    {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\52583d75-dcd8-4ebc-bbe1-bcf2b4154aefproduct-8.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\52583d75-dcd8-4ebc-bbe1-bcf2b4154aefproduct-8.jpg"
-    },
-    {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\5b74ac35-4010-4112-af78-cd9fad958d9bproduct-1.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\5b74ac35-4010-4112-af78-cd9fad958d9bproduct-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\6a1d4880-dc01-414a-b36b-4cd394186742product-6.jpg",
-=======
       "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\41408d54-a024-4987-90b4-ae84b6c2a1b8product-7.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\41408d54-a024-4987-90b4-ae84b6c2a1b8product-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\4a44b5ec-e4f9-49f3-97f0-93eaebf4f079product-11.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\4a44b5ec-e4f9-49f3-97f0-93eaebf4f079product-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\509998c2-b8f5-40ad-8e73-c13b5b349420product-2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\509998c2-b8f5-40ad-8e73-c13b5b349420product-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\516e2db4-7edf-4a38-898b-3efc225d3a61product-11.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\516e2db4-7edf-4a38-898b-3efc225d3a61product-11.jpg"
     },
     {
       "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\52583d75-dcd8-4ebc-bbe1-bcf2b4154aefproduct-8.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\52583d75-dcd8-4ebc-bbe1-bcf2b4154aefproduct-8.jpg"
     },
     {
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\5b74ac35-4010-4112-af78-cd9fad958d9bproduct-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\5b74ac35-4010-4112-af78-cd9fad958d9bproduct-1.jpg"
+    },
+    {
       "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\6a1d4880-dc01-414a-b36b-4cd394186742product-6.jpg",
->>>>>>> 070b16653b75c086ecfc1746423ec366c1523347
       "PackagePath": "staticwebassets\\uploads\\books\\6a1d4880-dc01-414a-b36b-4cd394186742product-6.jpg"
     },
     {
@@ -7937,40 +7925,44 @@
       "PackagePath": "staticwebassets\\uploads\\books\\9e3b621b-7b14-470b-80a8-f8fa9667c728product-6.jpg"
     },
     {
-<<<<<<< HEAD
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\bb1b5a3f-15a9-4c6b-af16-ec10ef54e9efproduct-5.jpg",
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\a64a79e7-8253-4bde-a687-b95a46dfa2e5cart-product-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\a64a79e7-8253-4bde-a687-b95a46dfa2e5cart-product-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\b068e34a-06e7-47b1-bd8f-455fbd5cbebdproduct-13.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\b068e34a-06e7-47b1-bd8f-455fbd5cbebdproduct-13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\bb1b5a3f-15a9-4c6b-af16-ec10ef54e9efproduct-5.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\bb1b5a3f-15a9-4c6b-af16-ec10ef54e9efproduct-5.jpg"
     },
     {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\bd2736f4-f3ad-417d-a13a-ba643c93ef69product-details-5.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\bd2736f4-f3ad-417d-a13a-ba643c93ef69product-details-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\d1f221c5-c8ad-49c8-970f-4b3f109d64b1product-details-4.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\d1f221c5-c8ad-49c8-970f-4b3f109d64b1product-details-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\da383dbd-5a92-481e-8000-909b18a7b6d2cart-product-1.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\da383dbd-5a92-481e-8000-909b18a7b6d2cart-product-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\ecc63965-16df-4f58-9a4c-4234969a84ccproduct-details-5.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\ecc63965-16df-4f58-9a4c-4234969a84ccproduct-details-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\f744854a-4351-4662-be96-9ce430273c2fproduct-10.jpg",
-=======
       "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\bd2736f4-f3ad-417d-a13a-ba643c93ef69product-details-5.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\bd2736f4-f3ad-417d-a13a-ba643c93ef69product-details-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\cc491c29-e2ea-46b5-af4e-27b9f180111eproduct-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\cc491c29-e2ea-46b5-af4e-27b9f180111eproduct-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\d1f221c5-c8ad-49c8-970f-4b3f109d64b1product-details-4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\d1f221c5-c8ad-49c8-970f-4b3f109d64b1product-details-4.jpg"
     },
     {
       "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\da383dbd-5a92-481e-8000-909b18a7b6d2cart-product-1.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\da383dbd-5a92-481e-8000-909b18a7b6d2cart-product-1.jpg"
     },
     {
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\ecc63965-16df-4f58-9a4c-4234969a84ccproduct-details-5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\ecc63965-16df-4f58-9a4c-4234969a84ccproduct-details-5.jpg"
+    },
+    {
       "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\f744854a-4351-4662-be96-9ce430273c2fproduct-10.jpg",
->>>>>>> 070b16653b75c086ecfc1746423ec366c1523347
       "PackagePath": "staticwebassets\\uploads\\books\\f744854a-4351-4662-be96-9ce430273c2fproduct-10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\f834fe4d-afcb-4c54-9128-b5214037d84bproduct-12.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\f834fe4d-afcb-4c54-9128-b5214037d84bproduct-12.jpg"
     },
     {
       "Id": "C:\\Users\\II novbe\\Desktop\\FromGitProject\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\uploads\\books\\f8f915bc-24f6-4e7c-b426-63755dd49be0product-11.jpg",
