@@ -28,6 +28,10 @@ builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<IBookTagsRepository, BookTagRepository>();
 builder.Services.AddScoped<IBookImagesRepository, BookImagesRepository>();
 
+builder.Services.AddSession(opt =>
+{
+    opt.IdleTimeout = TimeSpan.FromMinutes(20);
+});
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("myDb1")));
 var app = builder.Build();
@@ -41,23 +45,24 @@ if (!app.Environment.IsDevelopment())
 }
 
 
-app.MapControllerRoute(
-    name: "areas",
-    pattern: "{area=exists}/{controller=Home}/{action=Index}/{id?}"
-);
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
-);
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area=exists}/{controller=Home}/{action=Index}/{id?}"
+);
 
 app.Run();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MVC.Practice.PustokMVC.Business.Services;
 using MVC.Practice.PustokMVC.Data.DataAccessLayer;
 using MVC.PracticeTask_1.ViewModel;
 
@@ -7,21 +8,27 @@ namespace MVC.PracticeTask_1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly AppDbContext _DbContext;
+        private readonly ISliderService _sliderService;
+        private readonly IBookService _bookService;
+        private readonly AppDbContext _dbContext;
+
         private AppViewModel _ViewModel = new AppViewModel();
-        public HomeController(AppDbContext _context)
+        public HomeController(ISliderService sliderService, IBookService bookService, AppDbContext dbContext)
         {
-            _DbContext = _context;
+
+            _sliderService = sliderService;
+            _bookService = bookService;
+            _dbContext = dbContext;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
 
 
-            _ViewModel.Slides = _DbContext.Slides.ToList();
-            _ViewModel.Services = _DbContext.Services.ToList();
-            _ViewModel.NewBooks = _DbContext.Books.Include(b => b.BookImages).Include(a => a.Author).Where(b => b.isNew).ToList();
-            _ViewModel.FeaturedBooks = _DbContext.Books.Include(b => b.BookImages).Include(a => a.Author).Where(b => b.isFeatured).ToList();
-            _ViewModel.BestsellerBooks = _DbContext.Books.Include(b => b.BookImages).Include(a => a.Author).Where(b => b.isBestseller).ToList();
+            _ViewModel.Slides = await _sliderService.GetAllAsync();
+            _ViewModel.Services = _dbContext.Services.ToList();
+            _ViewModel.NewBooks = await _bookService.GetNewBooksAsync();
+            _ViewModel.FeaturedBooks = await _bookService.GetFeaturedBooksAsync();
+            _ViewModel.BestsellerBooks = await _bookService.GetBestsellerBooksAsync();
 
 
             return View(_ViewModel);

@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="~/assets/css/plugins.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="~/assets/css/main.css" />
     <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.css" integrity="sha512-oe8OpYjBaDWPt2VmSFR+qYOdnTjeV9QPLJUeqZyprDEQvQLJ9C5PCFclxwNuvb/GQgQngdCXzKSFltuHD3eCxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -133,7 +134,7 @@
                                         </a>
                                         <ul class="sub-menu">
                                             <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a asp-action="Checkout" asp-controller="ProductCookies">Checkout</a></li>
                                             <li><a href="compare.html">Compare</a></li>
                                             <li><a href="wishlist.html">Wishlist</a></li>
                                             <li><a href="login-register.html">Login Register</a></li>
@@ -846,7 +847,7 @@
             </div>
         </div>
 
-       @RenderBody()
+        @RenderBody()
     </div>
     <!--=================================
     Brands Slider
@@ -991,10 +992,10 @@
         </div>
     </footer>
     <!-- Use Minified Plugins Version For Fast Page Load -->
+    <script src="~/assets/js/script.js"></script>
     <script src="~/assets/js/plugins.js"></script>
     <script src="~/assets/js/ajax-mail.js"></script>
     <script src="~/assets/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
-
-
 </html>

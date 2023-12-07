@@ -31,3 +31,4 @@ deleteBtns.forEach(delBtn => delBtn.addEventListener("click", (e) => {
         }
     });
 }))
+

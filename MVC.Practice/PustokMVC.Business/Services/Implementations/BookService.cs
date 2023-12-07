@@ -167,6 +167,20 @@ namespace MVC.PracticeTask_1.Services.Implementations
             return await _bookRepository.GetAllAsync(x => x.IsDeleted == false, "BookImages", "Author", "Genre");
         }
 
+        public async Task<List<Book>> GetBestsellerBooksAsync()
+        {
+            return await _bookRepository.GetAllAsync(x => x.isBestseller == true, "BookImages", "Author");
+        }
+
+        public async Task<List<Book>> GetFeaturedBooksAsync()
+        {
+            return await _bookRepository.GetAllAsync(x => x.isFeatured == true, "BookImages", "Author");
+        }
+
+        public async Task<List<Book>> GetNewBooksAsync()
+        {
+            return await _bookRepository.GetAllAsync(x => x.isNew == true, "BookImages", "Author");
+        }
         public async Task<Book> GetByIdAsync(int id)
         {
             Book entity = await _bookRepository.GetByIdAsync(x => x.Id == id && x.IsDeleted == false, "Author", "BookImages", "BookTags");
@@ -175,6 +189,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
 
             return entity;
         }
+
 
         public async Task SoftDelete(int id)
         {
