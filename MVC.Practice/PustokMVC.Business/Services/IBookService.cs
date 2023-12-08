@@ -10,6 +10,7 @@ namespace MVC.Practice.PustokMVC.Business.Services
         Task<Book> GetByIdAsync(int id);
         Task<List<Book>> GetAllAsync();
         Task<List<Book>> GetNewBooksAsync();
+        Task<List<Book>> GetAllRelatedBooksAsync(Book book);
         Task<List<Book>> GetBestsellerBooksAsync();
         Task<List<Book>> GetFeaturedBooksAsync();
         Task UpdateAsync(Book entity);

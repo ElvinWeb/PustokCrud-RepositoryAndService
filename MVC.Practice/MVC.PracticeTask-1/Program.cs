@@ -5,6 +5,7 @@ using MVC.Practice.PustokMVC.Core.Repositories;
 using MVC.Practice.PustokMVC.Data.DataAccessLayer;
 using MVC.Practice.PustokMVC.Data.Repositories.Implementations;
 using MVC.PracticeTask_1.Services.Implementations;
+using MVC.PracticeTask_1.ViewService;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -27,7 +28,7 @@ builder.Services.AddScoped<ITagService, TagService>();
 
 builder.Services.AddScoped<IBookTagsRepository, BookTagRepository>();
 builder.Services.AddScoped<IBookImagesRepository, BookImagesRepository>();
-
+builder.Services.AddScoped<LayoutService>();
 builder.Services.AddSession(opt =>
 {
     opt.IdleTimeout = TimeSpan.FromMinutes(20);
@@ -57,12 +58,12 @@ app.MapRazorPages();
 
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
 );
 app.MapControllerRoute(
-    name: "areas",
-    pattern: "{area=exists}/{controller=Home}/{action=Index}/{id?}"
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 
 app.Run();

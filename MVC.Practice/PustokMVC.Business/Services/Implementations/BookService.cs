@@ -183,9 +183,13 @@ namespace MVC.PracticeTask_1.Services.Implementations
             return await _bookRepository.GetAllAsync(x => x.isNew == true, "BookImages", "Author");
 
         }
+        public async Task<List<Book>> GetAllRelatedBooksAsync(Book book)
+        {
+            return await _bookRepository.GetAllAsync(x => x.IsDeleted == false && x.GenreId == book.GenreId && x.Id != book.Id, "BookImages", "Author", "Genre", "BookTags.Tag");
+        }
         public async Task<Book> GetByIdAsync(int id)
         {
-            Book entity = await _bookRepository.GetByIdAsync(x => x.Id == id && x.IsDeleted == false, "Author", "BookImages", "BookTags");
+            Book entity = await _bookRepository.GetByIdAsync(x => x.Id == id && x.IsDeleted == false, "Author", "BookImages", "BookTags.Tag");
 
             if (entity is null) throw new NullReferenceException();
 
@@ -206,7 +210,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
 
         public async Task UpdateAsync(Book entity)
         {
-            Book existBook = await _bookRepository.GetByIdAsync(x => x.Id == entity.Id && x.IsDeleted == false, "Author", "BookImages", "BookTags.tag");
+            Book existBook = await _bookRepository.GetByIdAsync(x => x.Id == entity.Id && x.IsDeleted == false, "Author", "BookImages", "BookTags.Tag");
 
             if (existBook == null) throw new NotFound();
 
@@ -323,6 +327,6 @@ namespace MVC.PracticeTask_1.Services.Implementations
 
         }
 
-
+      
     }
 }

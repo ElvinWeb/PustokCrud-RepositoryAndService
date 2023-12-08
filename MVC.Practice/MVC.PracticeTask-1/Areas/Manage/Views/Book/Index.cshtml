@@ -17,13 +17,17 @@
         background-color: #435d7d !important;
     }
 
-        .table-title .title {
-            font-weight: 700;
-        }
+    .percentage {
+        width: 60px;
+    }
 
-        .table-title span {
-            font-weight: 300;
-        }
+    .table-title .title {
+        font-weight: 700;
+    }
+
+    .table-title span {
+        font-weight: 300;
+    }
 
     .create-btn {
         width: 110px;
@@ -62,7 +66,7 @@
                     <td>@book.Genre.Name</td>
                     <td>@book.Code</td>
                     <td>@book.SalePrice @currency</td>
-                    <td>@book.DiscountPercent @percentage</td>
+                    <td class="percentage">@book.DiscountPercent @percentage</td>
                     <td>@book.IsAvailable</td>
                     <td>
                         <a class="btn btn-warning" asp-action="Update" asp-controller="Book" asp-route-id="@book.Id">

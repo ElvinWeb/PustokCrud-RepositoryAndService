@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVC.Practice.PustokMVC.Business.Services;
+using MVC.Practice.PustokMVC.Core.Models;
 using MVC.Practice.PustokMVC.Core.Repositories;
 using MVC.PracticeTask_1.ViewModel;
 using Newtonsoft.Json;
@@ -8,10 +10,12 @@ namespace MVC.PracticeTask_1.Controllers
     public class ProductCookiesController : Controller
     {
         private readonly IBookRepository _bookRepository;
+        private readonly IBookService _bookService;
 
-        public ProductCookiesController(IBookRepository bookRepository)
+        public ProductCookiesController(IBookRepository bookRepository, IBookService bookService)
         {
             _bookRepository = bookRepository;
+            _bookService = bookService; 
         }
         public IActionResult Index()
         {
@@ -72,7 +76,25 @@ namespace MVC.PracticeTask_1.Controllers
         //    return Json(ids);
         //}
         #endregion
+        public async Task<IActionResult> Detail(int id)
+        {
+            Book book = await _bookService.GetByIdAsync(id);
 
+            ProductDetailViewModel productDetailViewModel = new ProductDetailViewModel()
+            {
+                Book = book,
+                RelatedBooks = await _bookService.GetAllRelatedBooksAsync(book)
+            };
+
+            return View(productDetailViewModel);
+        }
+
+        public async Task<IActionResult> GetBookModal(int id)
+        {
+            Book book = await _bookService.GetByIdAsync(id);
+
+            return PartialView("_BookModlaPartialView", book);
+        }
 
         public IActionResult AddToBasket(int bookId)
         {

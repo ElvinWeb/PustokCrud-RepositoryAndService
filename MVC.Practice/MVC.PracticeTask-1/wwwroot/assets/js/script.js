@@ -30,3 +30,19 @@ addToBasketBns.forEach(btn => btn.addEventListener("click", function (e) {
         })
 }));
 
+
+const btns = document.querySelectorAll(".show-modal-btn");
+
+btns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url = btn.getAttribute("href");
+
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                const modal = document.querySelector(".book-modal");
+                modal.innerHTML = data
+            })
+    })
+})

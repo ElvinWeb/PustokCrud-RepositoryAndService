@@ -22,7 +22,7 @@ namespace MVC.PracticeTask_1.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Author", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Author", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -42,7 +42,7 @@ namespace MVC.PracticeTask_1.Migrations
                     b.ToTable("Authors");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Book", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Book", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,7 +104,7 @@ namespace MVC.PracticeTask_1.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.BookImage", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.BookImage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -132,7 +132,7 @@ namespace MVC.PracticeTask_1.Migrations
                     b.ToTable("BookImages");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.BookTag", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.BookTag", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -158,7 +158,7 @@ namespace MVC.PracticeTask_1.Migrations
                     b.ToTable("BookTags");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Genre", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Genre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -178,7 +178,7 @@ namespace MVC.PracticeTask_1.Migrations
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Service", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Service", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -208,7 +208,7 @@ namespace MVC.PracticeTask_1.Migrations
                     b.ToTable("Services");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Slide", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Slide", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -248,7 +248,7 @@ namespace MVC.PracticeTask_1.Migrations
                     b.ToTable("Slides");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Tag", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Tag", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -268,15 +268,39 @@ namespace MVC.PracticeTask_1.Migrations
                     b.ToTable("Tags");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Book", b =>
+            modelBuilder.Entity("PustokMVC.Core.Models.Setting", b =>
                 {
-                    b.HasOne("MVC.PracticeTask_1.Models.Author", "Author")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings");
+                });
+
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Book", b =>
+                {
+                    b.HasOne("MVC.Practice.PustokMVC.Core.Models.Author", "Author")
                         .WithMany("Books")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MVC.PracticeTask_1.Models.Genre", "Genre")
+                    b.HasOne("MVC.Practice.PustokMVC.Core.Models.Genre", "Genre")
                         .WithMany("Books")
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -287,9 +311,9 @@ namespace MVC.PracticeTask_1.Migrations
                     b.Navigation("Genre");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.BookImage", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.BookImage", b =>
                 {
-                    b.HasOne("MVC.PracticeTask_1.Models.Book", "Book")
+                    b.HasOne("MVC.Practice.PustokMVC.Core.Models.Book", "Book")
                         .WithMany("BookImages")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -298,15 +322,15 @@ namespace MVC.PracticeTask_1.Migrations
                     b.Navigation("Book");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.BookTag", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.BookTag", b =>
                 {
-                    b.HasOne("MVC.PracticeTask_1.Models.Book", "Book")
+                    b.HasOne("MVC.Practice.PustokMVC.Core.Models.Book", "Book")
                         .WithMany("BookTags")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MVC.PracticeTask_1.Models.Tag", "Tag")
+                    b.HasOne("MVC.Practice.PustokMVC.Core.Models.Tag", "Tag")
                         .WithMany("BookTags")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -317,24 +341,24 @@ namespace MVC.PracticeTask_1.Migrations
                     b.Navigation("Tag");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Author", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Author", b =>
                 {
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Book", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Book", b =>
                 {
                     b.Navigation("BookImages");
 
                     b.Navigation("BookTags");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Genre", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Genre", b =>
                 {
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("MVC.PracticeTask_1.Models.Tag", b =>
+            modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Tag", b =>
                 {
                     b.Navigation("BookTags");
                 });

@@ -21,7 +21,7 @@
                         @book.Author.FullName
                     </a>
                     <h3>
-                        <a href="product-details.html">
+                        <a  asp-controller="ProductCookies" asp-action="Detail" asp-route-id="@book.Id">
                             @book.Name
                         </a>
                     </h3>
@@ -43,8 +43,8 @@
                                 <a href="compare.html" class="single-btn">
                                     <i class="fas fa-random"></i>
                                 </a>
-                                <a href="#" data-toggle="modal" data-target="#quickModal"
-                                   class="single-btn">
+                                <a data-toggle="modal" data-target="#quickModal" asp-action="GetBookModal" asp-controller="ProductCookies" asp-route-id="@book.Id"
+                                   class="single-btn show-modal-btn">
                                     <i class="fas fa-eye"></i>
                                 </a>
                             </div>
