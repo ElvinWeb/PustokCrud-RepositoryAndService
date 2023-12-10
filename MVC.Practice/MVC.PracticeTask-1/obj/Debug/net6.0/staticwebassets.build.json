@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ao4RLqCLBPzejDcrDyQwwa6eXAZ88tpkRWm64N9TVLk=",
+  "Hash": "8OCa5D+QYkqfAll2EMP0B8iYPsIMuQCUUxmcFozlLM0=",
   "Source": "MVC.PracticeTask-1",
   "BasePath": "_content/MVC.PracticeTask-1",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\admin\\css\\login.css",
+      "SourceId": "MVC.PracticeTask-1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\",
+      "BasePath": "_content/MVC.PracticeTask-1",
+      "RelativePath": "admin/css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\css\\login.css"
+    },
     {
       "Identity": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\wwwroot\\admin\\css\\sb-admin-2.css",
       "SourceId": "MVC.PracticeTask-1",

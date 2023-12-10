@@ -7,5 +7,6 @@ namespace MVC.PracticeTask_1.ViewModel
     {
         public List<Genre> Genres { get; set; }
         public List<Setting> Settings { get; set; }
+        public User User { get; set; }  
     }
 }

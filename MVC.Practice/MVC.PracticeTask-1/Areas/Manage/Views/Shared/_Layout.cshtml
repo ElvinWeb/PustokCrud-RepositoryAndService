@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using PustokMVC.Core.Models;
+@inject LayoutService service
+@{
+    User user = await service.GetUser();
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,11 +38,13 @@
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background:#435d7d">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-action="Index" asp-controller="DashBoard">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Elvin Panel</div>
+                <div class="sidebar-brand-text mx-3">
+                    Elvin Panel
+                </div>
             </a>
 
             <!-- Divider -->
@@ -353,7 +360,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    @(User.Identity.IsAuthenticated ? user.FullName : "unknown user")
+                                </span>
                                 <img class="img-profile rounded-circle"
                                      src="~/admin/img/undraw_profile.svg">
                             </a>
@@ -373,7 +382,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -422,7 +431,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a asp-action="Logout" asp-controller="Account" class="btn btn-primary">Logout</a>
                 </div>
             </div>
         </div>
@@ -438,13 +447,7 @@
     <!-- Custom scripts for all pages-->
     <script src="j~/admin/js/sb-admin-2.min.js"></script>
     @RenderSection("jsFiles",required: false)
-    @* <!-- Page level plugins -->
-    <script src="~/admin/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="~/admin/js/demo/chart-area-demo.js"></script>
-    <script src="~/admin/js/demo/chart-pie-demo.js"></script> *@
-
+    @RenderSection("Scripts",required: false)
 </body>
 
 </html>

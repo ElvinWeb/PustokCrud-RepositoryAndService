@@ -6,8 +6,8 @@
     <div class="header-middle pt--10 pb--10">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-3 ">
-                    <a href="index.html" class="site-brand">
+                <div class="col-lg-2">
+                    <a asp-action="Index" asp-controller="Home" class="site-brand">
                         <img src="~/assets/image/logo.png" alt="">
                     </a>
                 </div>
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="main-navigation flex-lg-right">
                         <ul class="main-menu menu-right ">
                             <li class="menu-item has-children">
@@ -30,7 +30,7 @@
                                     Home <i class="fas fa-chevron-down dropdown-arrow"></i>
                                 </a>
                                 <ul class="sub-menu">
-                                    <li> <a href="index.html">Home One</a></li>
+                                    <li> <a asp-action="Index" asp-controller="Home">Home One</a></li>
                                     <li> <a href="index-2.html">Home Two</a></li>
                                     <li> <a href="index-3.html">Home Three</a></li>
                                     <li> <a href="index-4.html">Home Four</a></li>
@@ -119,10 +119,10 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li><a href="cart.html">Cart</a></li>
+                                    <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="compare.html">Compare</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="login-register.html">Login Register</a></li>
                                     <li><a href="my-account.html">My Account</a></li>
                                     <li><a href="order-complete.html">Order Complete</a></li>
                                     <li><a href="faq.html">Faq</a></li>
@@ -168,6 +168,12 @@
                             <li class="menu-item">
                                 <a href="contact.html">Contact</a>
                             </li>
+                            <li class="menu-item">
+                                <a href="#">
+                                    <i class="fa-solid fa-user" style="margin-right:5px;"></i>
+                                    @(User.Identity.IsAuthenticated ? Model.User.FullName : "My Account")
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -204,8 +210,8 @@
                     <div class="main-navigation flex-lg-right">
                         <div class="cart-widget">
                             <div class="login-block">
-                                <a href="login-register.html" class="font-weight-bold">Login</a> <br>
-                                <span>or</span><a href="login-register.html">Register</a>
+                                <a asp-action="Login" asp-controller="Account" class="font-weight-bold">Login</a> <br>
+                                <span>or</span><a asp-action="Register" asp-controller="Account">Register</a>
                             </div>
                             <div class="cart-block">
                                 <div class="cart-total">

@@ -16730,8 +16730,8 @@ input[type="number"] {
       color: #333; } }
     @media (min-width: 992px) and (min-width: 1200px) {
       ul.main-menu > li.menu-item > a {
-        margin-left: 20px;
-        margin-right: 20px; } }
+        margin-left: 10px;
+        margin-right: 10px; } }
 
 @media (min-width: 992px) {
     ul.main-menu > li.menu-item:hover > a {
