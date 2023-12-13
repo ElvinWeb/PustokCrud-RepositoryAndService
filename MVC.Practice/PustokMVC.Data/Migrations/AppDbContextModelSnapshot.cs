@@ -472,6 +472,130 @@ namespace MVC.PracticeTask_1.Migrations
                     b.ToTable("Tags");
                 });
 
+            modelBuilder.Entity("PustokMVC.Core.Models.BasketItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("BasketItems");
+                });
+
+            modelBuilder.Entity("PustokMVC.Core.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TotalPrice")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("PustokMVC.Core.Models.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("CostPrice")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<double>("DiscountPercent")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("SalePrice")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderItems");
+                });
+
             modelBuilder.Entity("PustokMVC.Core.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
@@ -611,6 +735,53 @@ namespace MVC.PracticeTask_1.Migrations
                     b.Navigation("Tag");
                 });
 
+            modelBuilder.Entity("PustokMVC.Core.Models.BasketItem", b =>
+                {
+                    b.HasOne("MVC.Practice.PustokMVC.Core.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PustokMVC.Core.Models.User", "User")
+                        .WithMany("BasketItems")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PustokMVC.Core.Models.Order", b =>
+                {
+                    b.HasOne("PustokMVC.Core.Models.User", "User")
+                        .WithMany("Orders")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PustokMVC.Core.Models.OrderItem", b =>
+                {
+                    b.HasOne("MVC.Practice.PustokMVC.Core.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PustokMVC.Core.Models.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Order");
+                });
+
             modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Author", b =>
                 {
                     b.Navigation("Books");
@@ -631,6 +802,18 @@ namespace MVC.PracticeTask_1.Migrations
             modelBuilder.Entity("MVC.Practice.PustokMVC.Core.Models.Tag", b =>
                 {
                     b.Navigation("BookTags");
+                });
+
+            modelBuilder.Entity("PustokMVC.Core.Models.Order", b =>
+                {
+                    b.Navigation("OrderItems");
+                });
+
+            modelBuilder.Entity("PustokMVC.Core.Models.User", b =>
+                {
+                    b.Navigation("BasketItems");
+
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }
