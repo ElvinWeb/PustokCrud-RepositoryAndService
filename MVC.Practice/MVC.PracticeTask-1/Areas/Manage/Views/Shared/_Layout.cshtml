@@ -26,6 +26,7 @@
     <link href="~/admin/css/sb-admin-2.min.css" rel="stylesheet">
 
     @RenderSection("cssFiles",required: false)
+    @RenderSection("ActioncssFiles",required: false)
 
 </head>
 
@@ -154,6 +155,7 @@
                         <a class="collapse-item" asp-action="Index" asp-controller="Genre">Genres</a>
                         <a class="collapse-item" asp-action="Index" asp-controller="Author">Authors</a>
                         <a class="collapse-item" asp-action="Index" asp-controller="Tag">Tags</a>
+                        <a class="collapse-item" asp-action="Index" asp-controller="Order">Orders</a>
                     </div>
                 </div>
             </li>
@@ -448,6 +450,7 @@
     <script src="j~/admin/js/sb-admin-2.min.js"></script>
     @RenderSection("jsFiles",required: false)
     @RenderSection("Scripts",required: false)
+    @RenderSection("ActionjsFiles",required: false)
 </body>
 
 </html>

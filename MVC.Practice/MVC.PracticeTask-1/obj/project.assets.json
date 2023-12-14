@@ -10969,11 +10969,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\MVC.PracticeTask-1.csproj",
+      "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\MVC.PracticeTask-1.csproj",
       "projectName": "MVC.PracticeTask-1",
-      "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\MVC.PracticeTask-1.csproj",
+      "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\MVC.PracticeTask-1.csproj",
       "packagesPath": "C:\\Users\\elvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\MVC.PracticeTask-1\\obj\\",
+      "outputPath": "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\MVC.PracticeTask-1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\elvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10990,8 +10990,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Business\\PustokMVC.Business.csproj": {
-              "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Business\\PustokMVC.Business.csproj"
+            "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Business\\PustokMVC.Business.csproj": {
+              "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Business\\PustokMVC.Business.csproj"
             }
           }
         }

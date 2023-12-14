@@ -168,11 +168,26 @@
                             <li class="menu-item">
                                 <a href="contact.html">Contact</a>
                             </li>
-                            <li class="menu-item">
-                                <a href="#">
+                            <li class="menu-item has-children">
+                                <a asp-action="Profile" asp-controller="Account">
                                     <i class="fa-solid fa-user" style="margin-right:5px;"></i>
                                     @(User.Identity.IsAuthenticated ? Model.User.FullName : "My Account")
+                                    <i class="fas fa-chevron-down dropdown-arrow"></i>
                                 </a>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <ul class="sub-menu">
+                                        <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
+                                    </ul>
+                                }
+                                else
+                                {
+                                    <ul class="sub-menu">
+                                        <li><a asp-action="Login" asp-controller="Account">Login</a></li>
+                                        <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
+                                        <li><a asp-action="Register" asp-controller="Account">Register</a></li>
+                                    </ul>
+                                }
                             </li>
                         </ul>
                     </div>
@@ -209,10 +224,6 @@
                 <div class="col-lg-4">
                     <div class="main-navigation flex-lg-right">
                         <div class="cart-widget">
-                            <div class="login-block">
-                                <a asp-action="Login" asp-controller="Account" class="font-weight-bold">Login</a> <br>
-                                <span>or</span><a asp-action="Register" asp-controller="Account">Register</a>
-                            </div>
                             <div class="cart-block">
                                 <div class="cart-total">
                                     <span class="text-number">

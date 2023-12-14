@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OEJWdI3pemCofNXIfhSsiT6Q18V2xtwwSo4YY44kjIJmm4gqUpX3casYhCdET5ztWjIjO9QAAEmipVrjJ/FXgA==",
+  "dgSpecHash": "f35JaKFyb0JmhkSyKnhcdXFmV/pQB8N21cL+I4ycdSb8eAwQretMbexDWgSsVlwsytDHg+jepCRzh2OAXipPug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj",
+  "projectFilePath": "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elvin\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\elvin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

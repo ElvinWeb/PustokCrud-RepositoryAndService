@@ -1,4 +1,5 @@
 ﻿using MVC.Practice.PustokMVC.Core.Models;
+using PustokMVC.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,8 @@ namespace PustokMVC.Core.Models
         public string Address { get; set; }
         public string ZipCode { get; set; }
         public string? Note { get; set; }
-        public string TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
+        public OrderStatus OrderStatus { get; set; }
         public User? User { get; set; }
         public string? UserId { get; set; }
         public List<OrderItem> OrderItems { get; set; }

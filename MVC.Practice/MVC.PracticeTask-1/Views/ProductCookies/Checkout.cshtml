@@ -5,8 +5,8 @@
 
     foreach (var item in Model.CheckoutViewModels)
     {
-        PriceWithPercentage = (item.Book.SalePrice - item.Book.Tax - (item.Book.SalePrice * item.Book.DiscountPercent) / 100) * item.Count;
-        TotalSum += (item.Book.SalePrice - item.Book.Tax - (item.Book.SalePrice * item.Book.DiscountPercent) / 100) * item.Count;
+        PriceWithPercentage = (item.Book.SalePrice - (item.Book.SalePrice * item.Book.DiscountPercent) / 100) * item.Count;
+        TotalSum += (item.Book.SalePrice - (item.Book.SalePrice * item.Book.DiscountPercent) / 100) * item.Count;
     }
 }
 
@@ -140,7 +140,7 @@
                                     </div>
                                 </div>
                             </form>
-                           
+
                         </div>
                         <div class="col-lg-5">
                             <div class="row">
@@ -153,13 +153,13 @@
                                             @foreach (var item in Model.CheckoutViewModels)
                                             {
                                                 <li>
-                                                    <span class="left">@item.Book.Name  X  @item.Count</span> <span class="right">$@((item.Book.SalePrice - item.Book.Tax - (item.Book.SalePrice * item.Book.DiscountPercent) / 100) * item.Count)</span>
+                                                    <span class="left">@item.Book.Name  X  @item.Count</span> <span class="right">$@((item.Book.SalePrice - (item.Book.SalePrice * item.Book.DiscountPercent) / 100) * item.Count)</span>
                                                 </li>
                                             }
                                         </ul>
-                                        <p>Sub Total <span>$@(Math.Floor(TotalSum))</span></p>
+                                        <p>Sub Total <span>$@TotalSum.ToString("0.00")</span></p>
                                         <p>Shipping Fee <span>$00.00</span></p>
-                                        <h4>Grand Total <span>$@(Math.Floor(TotalSum))</span></h4>
+                                        <h4>Grand Total <span>$@TotalSum.ToString("0.00")</span></h4>
                                         <div class="method-notice mt--25">
                                             <article>
                                                 <h3 class="d-none sr-only">blog-article</h3>

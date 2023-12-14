@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj": {}
+    "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj": {
+    "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj",
+        "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj",
         "projectName": "PustokMVC.Core",
-        "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj",
+        "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\PustokMVC.Core.csproj",
         "packagesPath": "C:\\Users\\elvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MVC-PustokAdmin\\MVC.Practice\\PustokMVC.Core\\obj\\",
+        "outputPath": "C:\\Users\\elvin\\OneDrive\\Documents\\MainProjects\\PustokCrud-RepositoryAndService\\MVC.Practice\\PustokMVC.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\elvin\\AppData\\Roaming\\NuGet\\NuGet.Config",

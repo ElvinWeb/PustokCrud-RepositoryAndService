@@ -161,7 +161,7 @@ namespace MVC.PracticeTask_1.Controllers
             }
             else
             {
-                userBasketItem = await _context.BasketItems.FirstOrDefaultAsync(x => x.BookId == bookId && x.UserId == user.Id);
+                userBasketItem = await _context.BasketItems.FirstOrDefaultAsync(x => x.BookId == bookId && x.UserId == user.Id && !x.IsDeleted);
                 if (userBasketItem != null)
                 {
                     userBasketItem.Count++;
@@ -237,7 +237,7 @@ namespace MVC.PracticeTask_1.Controllers
             }
             else
             {
-                userBasketItems = await _context.BasketItems.Include(x => x.Book).Where(x => x.UserId == user.Id).ToListAsync();
+                userBasketItems = await _context.BasketItems.Include(x => x.Book).Where(x => x.UserId == user.Id && !x.IsDeleted).ToListAsync();
 
                 foreach (var item in userBasketItems)
                 {
@@ -287,6 +287,7 @@ namespace MVC.PracticeTask_1.Controllers
                 Phone = orderViewModel.Phone,
                 Note = orderViewModel.Note,
                 UserId = user?.Id,
+                CreatedDate = DateTime.UtcNow.AddHours(4),
                 OrderItems = new List<OrderItem>(),
 
             };
@@ -324,7 +325,7 @@ namespace MVC.PracticeTask_1.Controllers
             }
             else
             {
-                userBasketItems = await _context.BasketItems.Include(x => x.Book).Where(x => x.UserId == user.Id).ToListAsync();
+                userBasketItems = await _context.BasketItems.Include(x => x.Book).Where(x => x.UserId == user.Id && !x.IsDeleted).ToListAsync();
 
                 foreach (var item in userBasketItems)
                 {
@@ -343,6 +344,7 @@ namespace MVC.PracticeTask_1.Controllers
 
                     order.TotalPrice += orderItem.SalePrice * orderItem.Count;
                     order.OrderItems.Add(orderItem);
+                    item.IsDeleted = true; 
                 }
             }
 

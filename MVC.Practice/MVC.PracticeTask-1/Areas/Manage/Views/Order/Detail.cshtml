@@ -1,0 +1,65 @@
+﻿@model Order
+@{
+    var counter = 0;
+}
+@* @section ActioncssFiles{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+} *@
+<div class="container-fluid d-flex align-items-center justify-content-around">
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+            <h5 class="card-title">Order Details</h5>
+            <p class="card-text"><span class="fw-bold text-dark">Note:</span>  @Model.Note</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span class="fw-bold text-dark">Email:</span>  @Model.Email</li>
+            <li class="list-group-item"><span class="fw-bold text-dark">FullName:</span>  @Model.FullName</li>
+            <li class="list-group-item"><span class="fw-bold text-dark">Phone:</span>  @Model.Phone</li>
+            <li class="list-group-item"><span class="fw-bold text-dark">Country:</span>  @Model.Country</li>
+            <li class="list-group-item"><span class="fw-bold text-dark">Adress:</span>  @Model.Address</li>
+            <li class="list-group-item"><span class="fw-bold text-dark">ZipCode:</span>  @Model.ZipCode</li>
+            <li class="list-group-item"><span class="fw-bold text-dark">TotalAmount:</span>  @Model.TotalPrice</li>
+        </ul>
+        <div class="card-body">
+            <a asp-action="Reject" asp-controller="Order" asp-route-id="@Model.Id" class="btn btn-danger action-btn">Cancel</a>
+            <a asp-action="Accept" asp-controller="Order" asp-route-id="@Model.Id" class="btn btn-success action-btn">Accept</a>
+            <a asp-action="index" asp-controller="Order" class="btn btn-primary">Go back</a>
+        </div>
+    </div>
+
+    <div>
+        <table class="table table-striped" >
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Bookname</th>
+                    <th scope="col">Sale Price</th>
+                    <th scope="col">Cost Price</th>
+                    <th scope="col">Discount percent</th>
+                    <th scope="col">Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderItems)
+                {
+                    counter++;
+                    <tr>
+                        <th scope="row">@counter</th>
+                        <th scope="row">@item.BookName</th>
+                        <th scope="row">@item.SalePrice.ToString("0.00") Azn</th>
+                        <th scope="row">@item.CostPrice.ToString("0.00") Azn</th>
+                        <th scope="row">@item.DiscountPercent %</th>
+                        <th scope="row">@item.Count pcs</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@* @section ActionjsFiles{
+    <script src="~/assets/js/orderActions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.min.js"></script>
+} *@
+

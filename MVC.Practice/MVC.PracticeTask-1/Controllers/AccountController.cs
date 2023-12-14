@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MVC.Practice.PustokMVC.Data.DataAccessLayer;
 using MVC.PracticeTask_1.ViewModel;
 using PustokMVC.Core.Models;
 
@@ -9,10 +12,12 @@ namespace MVC.PracticeTask_1.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
+        private readonly AppDbContext _context;
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager, AppDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
         public IActionResult Index()
         {
@@ -106,6 +111,21 @@ namespace MVC.PracticeTask_1.Controllers
             await _signInManager.SignOutAsync();
 
             return RedirectToAction("Register", "Account");
+        }
+
+        [Authorize(Roles = "Member,Admin, SuperAdmin")]
+        public async Task<IActionResult> Profile()
+        {
+            User appUser = null;
+
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                appUser = await _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+            }
+
+            List<Order> orders = await _context.Orders.Where(order => order.UserId == appUser.Id).ToListAsync();
+
+            return View(orders);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace MVC.PracticeTask_1.ViewComponents
             {
                 Genres = await _genreService.GetAllAsync(),
                 Settings = await _context.Settings.ToListAsync(),
-                User = user
+                User = user,
             };
 
             return View(headerViewModel);

@@ -6,7 +6,7 @@ using PustokMVC.Core.Models;
 namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 {
     [Area("manage")]
-    [Authorize(Roles = "SuperAdmin,Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin,Member")]
     public class DashBoardController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -29,7 +29,7 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         //    {
         //        FullName = "Elvin Sarkarov",
         //        UserName = "Admin1",
-        //        BirthDate = "4 Sep",
+        //        BirthDate = "4 September",
         //    };
 
         //    var result = await _userManager.CreateAsync(user, "#Elvin123");
