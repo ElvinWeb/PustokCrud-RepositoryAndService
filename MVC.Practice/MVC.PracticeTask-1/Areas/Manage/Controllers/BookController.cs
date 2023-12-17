@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MVC.Practice.PustokMVC.Business.Exceptions.BookExceptions;
 using MVC.Practice.PustokMVC.Business.Exceptions.CommonModelsExceptions;
 using MVC.Practice.PustokMVC.Business.Services;
 using MVC.Practice.PustokMVC.Core.Models;
+using MVC.PracticeTask_1.Pagination;
 
 namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 {
@@ -28,11 +30,13 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
             _tagService = tagService;
 
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            List<Book> Books = await _bookService.GetAllAsync();
+            var query = _bookService.GetBookTable().Include(a => a.Author).Include(g => g.Genre);
 
-            return View(Books);
+            PaginatedList<Book> paginatedBooks = PaginatedList<Book>.Create(query, page, 3);
+
+            return View(paginatedBooks);
         }
         public IActionResult Error()
         {
@@ -436,7 +440,7 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
             }
             catch (NullReferenceException ex)
             {
-               
+
             }
 
             return RedirectToAction("Index");

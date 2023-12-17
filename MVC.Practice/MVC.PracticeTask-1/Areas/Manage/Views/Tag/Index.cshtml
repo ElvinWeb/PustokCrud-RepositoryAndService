@@ -1,4 +1,4 @@
-﻿@model List<Tag>;
+﻿@model PaginatedList<Tag>
 @{
     int counter = 0;
 }
@@ -62,6 +62,20 @@
             }
         </tbody>
     </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li class="page-item @(Model.HasPreviousPage == true ? " " : "disabled")">
+                <a class="page-link" asp-action="index" asp-controller="Tag" asp-route-page="@(Model.PageIndex - 1)">Previous</a>
+            </li>
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(Model.PageIndex == i ? "active" : "")"><a class="page-link" asp-action="index" asp-controller="Tag" asp-route-page="@i">@i</a></li>
+            }
+            <li class="page-item @(Model.HasNextPage == true ? " " : "disabled")">
+                <a class="page-link" asp-action="index" asp-controller="Tag" asp-route-page="@(Model.PageIndex + 1)">Next</a>
+            </li>
+        </ul>
+    </nav>
 </div>
 
 @section jsFiles{

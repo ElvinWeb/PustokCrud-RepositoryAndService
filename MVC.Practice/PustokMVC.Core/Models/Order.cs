@@ -17,6 +17,7 @@ namespace PustokMVC.Core.Models
         public string Address { get; set; }
         public string ZipCode { get; set; }
         public string? Note { get; set; }
+        public string? AdminComment { get; set; }
         public double TotalPrice { get; set; }
         public OrderStatus OrderStatus { get; set; }
         public User? User { get; set; }

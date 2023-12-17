@@ -1,4 +1,4 @@
-﻿@model List<Order>
+﻿@model PaginatedList<Order>
 @{
     var counter = 0;
 }
@@ -52,7 +52,7 @@
                 <tr>
                     <th scope="row">@counter</th>
                     <td>@order.Id</td>
-                    <td>@order.TotalPrice AZN</td>
+                    <td>@order.TotalPrice.ToString("0.00") AZN</td>
                     <td>@order.CreatedDate?.ToString("MMMM dd, yyyy H:mm:ss")</td>
                     <td> <span class="badge text-white text-bg-@(order.OrderStatus == OrderStatus.Pending ? "secondary" : order.OrderStatus == OrderStatus.Accepted ? "success" : "danger")" style="padding: 6px 12px;">@order.OrderStatus</span></td>
                     <td><a asp-action="Detail" asp-controller="Order" asp-route-id="@order.Id" class="btn btn-warning text-white"><i class="fa-solid fa-eye"></i></a></td>
@@ -60,4 +60,18 @@
             }
         </tbody>
     </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li class="page-item @(Model.HasPreviousPage == true ? " " : "disabled")">
+                <a class="page-link" asp-action="index" asp-controller="Order" asp-route-page="@(Model.PageIndex - 1)">Previous</a>
+            </li>
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(Model.PageIndex == i ? "active" : "")"><a class="page-link" asp-action="index" asp-controller="Order" asp-route-page="@i">@i</a></li>
+            }
+            <li class="page-item @(Model.HasNextPage == true ? " " : "disabled")">
+                <a class="page-link" asp-action="index" asp-controller="Order" asp-route-page="@(Model.PageIndex + 1)">Next</a>
+            </li>
+        </ul>
+    </nav>
 </div>

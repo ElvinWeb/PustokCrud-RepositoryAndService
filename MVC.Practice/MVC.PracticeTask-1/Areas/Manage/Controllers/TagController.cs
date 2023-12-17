@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using MVC.Practice.PustokMVC.Business.Services;
 using MVC.Practice.PustokMVC.Core.Models;
 using MVC.Practice.PustokMVC.Business.Exceptions.CommonModelsExceptions;
-
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using MVC.PracticeTask_1.Pagination;
+using MVC.PracticeTask_1.ViewModel;
 
 namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 {
@@ -15,11 +17,13 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         {
             _tagService = tagService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            List<Tag> Tags = await _tagService.GetAllAsync();
+            var query = _tagService.GetTagTable();
 
-            return View(Tags);
+            PaginatedList<Tag> paginatedTags = PaginatedList<Tag>.Create(query, page, 3);
+
+            return View(paginatedTags);
         }
         [HttpGet]
         public IActionResult Create()

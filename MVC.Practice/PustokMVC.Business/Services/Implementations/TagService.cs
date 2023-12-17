@@ -47,6 +47,13 @@ namespace MVC.PracticeTask_1.Services.Implementations
             return entity;
         }
 
+        public IQueryable<Tag> GetTagTable()
+        {
+            var query = _tagRepository.Table.AsQueryable();
+
+            return query;
+        }
+
         public async Task UpdateAsync(Tag tag)
         {
             Tag existEntity = await _tagRepository.GetByIdAsync(x => x.Id == tag.Id && x.IsDeleted == false);

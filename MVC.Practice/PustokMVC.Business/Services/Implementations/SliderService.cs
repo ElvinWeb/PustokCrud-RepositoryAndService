@@ -5,6 +5,7 @@ using MVC.Practice.PustokMVC.Business.Helpers;
 using MVC.Practice.PustokMVC.Core.Models;
 using MVC.Practice.PustokMVC.Core.Repositories;
 using MVC.Practice.PustokMVC.Business.Services;
+using MVC.Practice.PustokMVC.Data.Repositories.Implementations;
 
 namespace MVC.PracticeTask_1.Services.Implementations
 {
@@ -124,6 +125,13 @@ namespace MVC.PracticeTask_1.Services.Implementations
         public Task Delete(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public IQueryable<Slide> GetSlideTable()
+        {
+            var query = _sliderRepository.Table.AsQueryable();
+
+            return query;
         }
     }
 }

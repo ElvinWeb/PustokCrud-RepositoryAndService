@@ -35,9 +35,9 @@
                     <tr>
                         <th scope="row">@counter</th>
                         <td>@item.Id</td>
-                        <td>@item.TotalPrice AZN</td>
+                        <td>@item.TotalPrice.ToString("0.00") AZN</td>
                         <td>@item.CreatedDate?.ToString("MM/dd/yyyy HH:mm")</td>
-                        <td> <span class="badge text-white text-bg-@(item.OrderStatus == OrderStatus.Pending ? "secondary" : item.OrderStatus == OrderStatus.Accepted ? "success" : "danger")" style="padding: 6px 12px;">@item.OrderStatus</span></td>
+                        <td> <span title="@item.AdminComment" class="badge text-white text-bg-@(item.OrderStatus == OrderStatus.Pending ? "secondary" : item.OrderStatus == OrderStatus.Accepted ? "success" : "danger")" style="padding: 6px 12px;">@item.OrderStatus</span></td>
                     </tr>
                 }
             </tbody>

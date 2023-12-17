@@ -6,7 +6,7 @@ namespace MVC.Practice.PustokMVC.Business.Services
     {
         Task CreateAsync(Genre entity);
         Task Delete(int id);
-   
+        IQueryable<Genre> GetGenreTable();
         Task<Genre> GetByIdAsync(int id);
         Task<List<Genre>> GetAllAsync();
         Task UpdateAsync(Genre entity);

@@ -6,6 +6,7 @@ namespace MVC.Practice.PustokMVC.Business.Services
     {
         Task CreateAsync(Slide entity);
         Task Delete(int id);
+        IQueryable<Slide> GetSlideTable();
         Task<Slide> GetByIdAsync(int id);
         Task<List<Slide>> GetAllAsync();
         Task UpdateAsync(Slide entity);

@@ -2,6 +2,7 @@
 using MVC.Practice.PustokMVC.Core.Models;
 using MVC.Practice.PustokMVC.Business.Services;
 using MVC.Practice.PustokMVC.Core.Repositories;
+using MVC.Practice.PustokMVC.Data.Repositories.Implementations;
 
 namespace MVC.PracticeTask_1.Services.Implementations
 {
@@ -37,7 +38,7 @@ namespace MVC.PracticeTask_1.Services.Implementations
 
         public async Task<List<Genre>> GetAllAsync()
         {
-            return await _genreRepository.GetAllAsync();
+            return await _genreRepository.GetAllAsync(x => x.IsDeleted == false, "Books");
         }
 
         public async Task<Genre> GetByIdAsync(int id)
@@ -45,6 +46,13 @@ namespace MVC.PracticeTask_1.Services.Implementations
             var entity = await _genreRepository.GetByIdAsync(x => x.Id == id && x.IsDeleted == false);
             if (entity is null) throw new NullReferenceException();
             return entity;
+        }
+
+        public IQueryable<Genre> GetGenreTable()
+        {
+            var query = _genreRepository.Table.AsQueryable();
+
+            return query;
         }
 
         public async Task UpdateAsync(Genre genre)

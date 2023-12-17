@@ -9,6 +9,7 @@ namespace MVC.Practice.PustokMVC.Business.Services
         Task Delete(int id);
         Task<Book> GetByIdAsync(int id);
         Task<List<Book>> GetAllAsync();
+        IQueryable<Book> GetBookTable();
         Task<List<Book>> GetNewBooksAsync();
         Task<List<Book>> GetAllRelatedBooksAsync(Book book);
         Task<List<Book>> GetBestsellerBooksAsync();

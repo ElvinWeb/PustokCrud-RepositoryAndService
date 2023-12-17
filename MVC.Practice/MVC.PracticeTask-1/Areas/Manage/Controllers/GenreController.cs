@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using MVC.Practice.PustokMVC.Business.Exceptions.CommonModelsExceptions;
 using MVC.Practice.PustokMVC.Business.Services;
 using MVC.Practice.PustokMVC.Core.Models;
+using MVC.PracticeTask_1.Pagination;
+using MVC.PracticeTask_1.Services.Implementations;
 
 namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 {
@@ -14,11 +17,13 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         {
             _genreService = genreService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            List<Genre> Genres = await _genreService.GetAllAsync();
+            var query = _genreService.GetGenreTable();
 
-            return View(Genres);
+            PaginatedList<Genre> paginatedGenres = PaginatedList<Genre>.Create(query, page, 3);
+
+            return View(paginatedGenres);
         }
         [HttpGet]
         public IActionResult Create()

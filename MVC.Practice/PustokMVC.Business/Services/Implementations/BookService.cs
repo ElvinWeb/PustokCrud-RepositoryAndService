@@ -327,6 +327,11 @@ namespace MVC.PracticeTask_1.Services.Implementations
 
         }
 
-      
+        public IQueryable<Book> GetBookTable()
+        {
+            var query = _bookRepository.Table.AsQueryable();
+
+            return query;
+        }
     }
 }

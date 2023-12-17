@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 } *@
 <div class="container-fluid d-flex align-items-center justify-content-around">
-    <div class="card" style="width: 30rem;">
+    <div class="card" style="width: 22rem;margin: 20px;">
         <div class="card-body">
             <h5 class="card-title">Order Details</h5>
             <p class="card-text"><span class="fw-bold text-dark">Note:</span>  @Model.Note</p>
@@ -22,21 +22,30 @@
             <li class="list-group-item"><span class="fw-bold text-dark">TotalAmount:</span>  @Model.TotalPrice</li>
         </ul>
         <div class="card-body">
-            <a asp-action="Reject" asp-controller="Order" asp-route-id="@Model.Id" class="btn btn-danger action-btn">Cancel</a>
+            <button type="submit" form="admin-comment-form" class="btn btn-danger action-btn">Cancel</button>
             <a asp-action="Accept" asp-controller="Order" asp-route-id="@Model.Id" class="btn btn-success action-btn">Accept</a>
             <a asp-action="index" asp-controller="Order" class="btn btn-primary">Go back</a>
+        </div>
+        <div class="card-body ">
+            <form id="admin-comment-form" method="post" asp-action="Reject" asp-controller="Order" class="d-flex flex-column justify-content-between">
+                <label asp-for="AdminComment">Admin Comment</label>
+                <textarea asp-for="AdminComment"></textarea>
+                <span asp-validation-for="AdminComment" style="color:red; font-size:14px"></span>
+                <input hidden value="@Model.Id" asp-for="Id" />
+            </form>
         </div>
     </div>
 
     <div>
-        <table class="table table-striped" >
-            <thead>
+        <table class="table table-striped">
+            <thead class="thead-light">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Bookname</th>
                     <th scope="col">Sale Price</th>
                     <th scope="col">Cost Price</th>
                     <th scope="col">Discount percent</th>
+                    <th scope="col">Book image</th>
                     <th scope="col">Count</th>
                 </tr>
             </thead>
@@ -50,6 +59,7 @@
                         <th scope="row">@item.SalePrice.ToString("0.00") Azn</th>
                         <th scope="row">@item.CostPrice.ToString("0.00") Azn</th>
                         <th scope="row">@item.DiscountPercent %</th>
+                        <th scope="row" style="max-width:200px;"><img style="width:30%" src="~/uploads/books/@item.Book.BookImages.FirstOrDefault(x => x.isPoster == true)?.ImgUrl" /></th>
                         <th scope="row">@item.Count pcs</th>
                     </tr>
                 }

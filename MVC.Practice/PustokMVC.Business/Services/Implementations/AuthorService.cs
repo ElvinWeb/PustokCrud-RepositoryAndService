@@ -3,6 +3,7 @@ using MVC.Practice.PustokMVC.Business.Exceptions.CommonModelsExceptions;
 using MVC.Practice.PustokMVC.Core.Models;
 using MVC.Practice.PustokMVC.Business.Services;
 using MVC.Practice.PustokMVC.Core.Repositories;
+using MVC.Practice.PustokMVC.Data.Repositories.Implementations;
 
 namespace MVC.PracticeTask_1.Services.Implementations
 {
@@ -49,6 +50,13 @@ namespace MVC.PracticeTask_1.Services.Implementations
             if (entity is null) throw new NullReferenceException();
 
             return entity;
+        }
+
+        public IQueryable<Author> GetAuthorTable()
+        {
+            var query = _authorRepository.Table.AsQueryable();
+
+            return query;
         }
 
         public async Task UpdateAsync(Author author)

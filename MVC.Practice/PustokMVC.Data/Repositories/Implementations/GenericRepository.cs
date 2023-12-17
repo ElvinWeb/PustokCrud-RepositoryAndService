@@ -33,7 +33,7 @@ namespace MVC.Practice.PustokMVC.Data.Repositories.Implementations
             Table.Remove(entity);
         }
 
-        public async Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>>? expression = null, params string[]? includes) 
+        public async Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>>? expression = null, params string[]? includes)
         {
             var query = GetQuery(includes);
 

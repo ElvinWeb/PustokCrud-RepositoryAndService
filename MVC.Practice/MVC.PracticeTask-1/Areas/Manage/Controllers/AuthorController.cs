@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using MVC.Practice.PustokMVC.Business.Exceptions.CommonModelsExceptions;
 using MVC.Practice.PustokMVC.Business.Services;
 using MVC.Practice.PustokMVC.Core.Models;
+using MVC.PracticeTask_1.Pagination;
+using PustokMVC.Core.Models;
 
 namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 {
@@ -14,11 +18,13 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
         {
             _authorService = authorService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            List<Author> Authors = await _authorService.GetAllAsync();
+            var query = _authorService.GetAuthorTable();
 
-            return View(Authors);
+            PaginatedList<Author> paginatedAuthors = PaginatedList<Author>.Create(query, page, 3);
+
+            return View(paginatedAuthors);
         }
 
         [HttpGet]

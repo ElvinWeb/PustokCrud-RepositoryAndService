@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using MVC.Practice.PustokMVC.Business.Exceptions.SliderExceptions;
 using MVC.Practice.PustokMVC.Business.Services;
 using MVC.Practice.PustokMVC.Core.Models;
+using MVC.PracticeTask_1.Pagination;
 using MVC.PracticeTask_1.Services;
+using PustokMVC.Core.Models;
 
 namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 {
@@ -16,11 +20,13 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 
             _sliderService = sliderService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            List<Slide> allSlides = await _sliderService.GetAllAsync();
+            var query = _sliderService.GetSlideTable();
 
-            return View(allSlides);
+            PaginatedList<Slide> paginatedSlides = PaginatedList<Slide>.Create(query, page, 3);
+
+            return View(paginatedSlides);
         }
 
         [HttpGet]
