@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using MVC.Practice.PustokMVC.Data.DataAccessLayer;
 using MVC.PracticeTask_1.Pagination;
+using PustokMVC.Business.Hubs;
 using PustokMVC.Core.Enums;
 using PustokMVC.Core.Models;
 
@@ -14,10 +17,14 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
     public class OrderController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IHubContext<ChatHub> _hubContext;
+        private readonly UserManager<User> _userManager;
 
-        public OrderController(AppDbContext context)
+        public OrderController(AppDbContext context, IHubContext<ChatHub> hubContext, UserManager<User> userManager)
         {
             _context = context;
+            _hubContext = hubContext;
+            _userManager = userManager;
         }
 
         public async Task<IActionResult> Index(int page = 1)
@@ -48,6 +55,16 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
 
             await _context.SaveChangesAsync();
 
+            if (order.UserId is not null)
+            {
+
+                var user = await _userManager.FindByIdAsync(order.UserId);
+                if (user is not null)
+                {
+                    await _hubContext.Clients.Client(user.ConnectionId).SendAsync("OrderAccepted");
+                }
+            }
+
             return RedirectToAction("Index", "Order");
         }
 
@@ -67,6 +84,17 @@ namespace MVC.PracticeTask_1.Areas.Manage.Controllers
             order.AdminComment = AdminComment;
 
             await _context.SaveChangesAsync();
+
+            if (order.UserId is not null)
+            {
+
+                var user = await _userManager.FindByIdAsync(order.UserId);
+                if (user is not null)
+                {
+                    await _hubContext.Clients.Client(user.ConnectionId).SendAsync("OrderRejected", AdminComment);
+                }
+            }
+
             return RedirectToAction("Index", "Order");
         }
     }

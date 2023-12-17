@@ -26,7 +26,6 @@
     <link href="~/admin/css/sb-admin-2.min.css" rel="stylesheet">
 
     @RenderSection("cssFiles",required: false)
-    @RenderSection("ActioncssFiles",required: false)
 
 </head>
 
@@ -448,9 +447,17 @@
 
     <!-- Custom scripts for all pages-->
     <script src="j~/admin/js/sb-admin-2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <script>
+        var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+        connection.start();
+
+
+        console.log(connection)
+    </script>
+    @RenderSection("signalScripts",required: false)
     @RenderSection("jsFiles",required: false)
     @RenderSection("Scripts",required: false)
-    @RenderSection("ActionjsFiles",required: false)
 </body>
 
 </html>

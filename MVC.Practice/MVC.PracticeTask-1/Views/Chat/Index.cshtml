@@ -1,0 +1,71 @@
+﻿@model List<User>
+<div class="container">
+    <div class="row m-5">
+        <div class="col-lg-4">
+            <ul class="list-group">
+                @foreach (var user in Model)
+                {
+                    <li class="list-group-item"> <span id="@user.Id" class="badge rounded-pill bg-@(user.ConnectionId != null ? "success" : "danger")" style="width:7px;height:7px;display: inline-block"></span> @user.FullName</li>
+                }
+            </ul>
+        </div>
+        <div class="col-lg-8">
+            <div class="row p-1">
+                <div class="col-1" style="margin-right:10px">User</div>
+                <div class="col-5"><input type="text" class="w-100" id="userInput" /></div>
+            </div>
+            <div class="row p-1">
+                <div class="col-1" style="margin-right:10px">Message</div>
+                <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+            </div>
+            <div class="row p-1">
+                <div class="col-6 text-end mt-2">
+                    <input type="button" id="sendButton" value="Send Message" />
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-6">
+                    <hr />
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-6">
+                    <ul id="messagesList"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section signalScripts{
+    <script>
+        document.getElementById("sendButton").addEventListener("click", () => {
+            const messageVal = document.getElementById("messageInput").value
+            const userVal = document.getElementById("userInput").value
+
+
+            connection.invoke("SendMessage", userVal, messageVal)
+        })
+
+        connection.on("ReceiveMessage", (user, message) => {
+            const messages = document.getElementById("messagesList");
+            const messageLi = document.createElement("li");
+
+            messageLi.innerText = `${user} : ${message}`;
+
+            messages.appendChild(messageLi);
+        })
+
+        connection.on("OnConnect", (userId) => {
+            document.getElementById(userId).classList.remove("bg-danger")
+            document.getElementById(userId).classList.add("bg-success")
+        })
+
+        connection.on("DisConnect", (userId) => {
+            document.getElementById(userId).classList.remove("bg-success")
+            document.getElementById(userId).classList.add("bg-danger")
+        })
+
+    </script>
+}

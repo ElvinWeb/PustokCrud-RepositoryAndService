@@ -39,6 +39,8 @@
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">Order Id</th>
+                <th scope="col">User status</th>
+                <th scope="col">Full Name</th>
                 <th scope="col">Total Amount</th>
                 <th scope="col">Created date</th>
                 <th scope="col">Status</th>
@@ -52,6 +54,8 @@
                 <tr>
                     <th scope="row">@counter</th>
                     <td>@order.Id</td>
+                    <td>@(order.UserId != null ? "Member" : "Guest")</td>
+                    <td>@order.FullName</td>
                     <td>@order.TotalPrice.ToString("0.00") AZN</td>
                     <td>@order.CreatedDate?.ToString("MMMM dd, yyyy H:mm:ss")</td>
                     <td> <span class="badge text-white text-bg-@(order.OrderStatus == OrderStatus.Pending ? "secondary" : order.OrderStatus == OrderStatus.Accepted ? "success" : "danger")" style="padding: 6px 12px;">@order.OrderStatus</span></td>

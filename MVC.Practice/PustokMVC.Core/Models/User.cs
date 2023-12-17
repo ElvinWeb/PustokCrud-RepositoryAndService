@@ -11,7 +11,7 @@ namespace PustokMVC.Core.Models
     {
         public string FullName { get; set; }
         public string BirthDate { get; set; }
-
+        public string? ConnectionId { get; set; }
         public List<BasketItem> BasketItems { get; set; }
         public List<Order> Orders { get; set; }
 
