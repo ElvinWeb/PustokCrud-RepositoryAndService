@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="PustokDb\" />
     <Folder Include="wwwroot\uploads\bg-slide\" />
     <Folder Include="wwwroot\uploads\books\" />
   </ItemGroup>
